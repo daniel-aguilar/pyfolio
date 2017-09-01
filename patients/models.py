@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 
+
 class Patient(models.Model):
     identification = models.CharField(max_length=9)
     date_added = models.DateTimeField()
