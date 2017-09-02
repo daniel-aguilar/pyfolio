@@ -1,0 +1,78 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-09-02 07:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: patients/apps.py:7 patients/models.py:34
+msgid "Patients"
+msgstr "Pacientes"
+
+#: patients/models.py:16
+msgid "Not Known"
+msgstr "No Conocido"
+
+#: patients/models.py:17
+msgid "Male"
+msgstr "Masculino"
+
+#: patients/models.py:18
+msgid "Female"
+msgstr "Femenino"
+
+#: patients/models.py:19
+msgid "Not Applicable"
+msgstr "No Aplicable"
+
+#: patients/models.py:22
+msgid "Identification"
+msgstr "Número de Cédula"
+
+#: patients/models.py:23
+msgid "Date Added"
+msgstr "Fecha de Ingreso"
+
+#: patients/models.py:24
+msgid "First Name"
+msgstr "Nombre"
+
+#: patients/models.py:25
+msgid "Last Name"
+msgstr "Apellido"
+
+#: patients/models.py:26
+msgid "Sex"
+msgstr "Sexo"
+
+#: patients/models.py:27
+msgid "Date of Birth"
+msgstr "Fecha de Nacimiento"
+
+#: patients/models.py:28
+msgid "Occupation"
+msgstr "Ocupación"
+
+#: patients/models.py:29
+msgid "Phone Number"
+msgstr "Número de Teléfono"
+
+#: patients/models.py:30
+msgid "Address"
+msgstr "Dirección"
+
+#: patients/models.py:33
+msgid "Patient"
+msgstr "Paciente"
