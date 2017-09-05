@@ -1,3 +1,6 @@
+from datetime import datetime
+
+from dateutil.relativedelta import relativedelta
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
@@ -6,18 +9,17 @@ from django.utils.translation import ugettext_lazy as _
 
 class Patient(models.Model):
 
-    # Sex choices
     NOT_KNOWN = 0
     MALE = 1
     FEMALE = 2
     NOT_APPLICABLE = 9
 
-    SEX_CHOICES = (
+    SEX_CHOICES = [
         (NOT_KNOWN, _('Not Known')),
         (MALE, _('Male')),
         (FEMALE, _('Female')),
         (NOT_APPLICABLE, _('Not Applicable')),
-    )
+    ]
 
     identification = models.CharField(_('Identification'), max_length=9)
     date_added = models.DateTimeField(_('Date Added'), auto_now_add=True)
@@ -33,5 +35,14 @@ class Patient(models.Model):
         verbose_name = _('Patient')
         verbose_name_plural = _('Patients')
 
-    def __str__(self):
+    def full_name(self):
         return '{0} {1}'.format(self.first_name, self.last_name)
+
+    def sex_verbose(self):
+        return dict(self.SEX_CHOICES)[self.sex]
+
+    def age(self):
+        return relativedelta(datetime.now(), self.date_of_birth).years
+
+    def __str__(self):
+        return self.full_name()
