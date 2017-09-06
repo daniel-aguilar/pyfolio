@@ -1,0 +1,33 @@
+{% extends "patients/base.html" %}
+{% load i18n bootstrap3 %}
+
+{% block content %}
+<h1>{% trans "Patients" %}</h1>
+
+<a class="btn btn-success" href="{% url "patients:patient-create" %}">{% trans "Add Patient" %}</a>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>{% trans "Identification" %}</th>
+      <th>{% trans "First Name" %}</th>
+      <th>{% trans "Last Name" %}</th>
+      <th>{% trans "Options" %}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for patient in patient_list %}
+    <tr>
+      <td>{{ patient.identification }}</td>
+      <td>{{ patient.first_name }}</td>
+      <td>{{ patient.last_name }}</td>
+      <td>
+        <a href="{% url "patients:patient-detail" patient.id %}">{% bootstrap_icon "eye-open"%}</a>
+        <a href="{% url "patients:patient-update" patient.id %}">{% bootstrap_icon "pencil"%}</a>
+        <a href="{% url "patients:patient-delete" patient.id %}">{% bootstrap_icon "trash"%}</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

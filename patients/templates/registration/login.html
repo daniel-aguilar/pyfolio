@@ -1,0 +1,12 @@
+{% extends "patients/base.html" %}
+{% load i18n bootstrap3 %}
+
+{% block content %}
+<form method="post" class="form">
+  {% csrf_token %}
+  {% bootstrap_form form %}
+  {% buttons %}
+  <button type="submit" class="btn btn-success">{% trans "Submit" %}</button>
+  {% endbuttons %}
+</form>
+{% endblock %}

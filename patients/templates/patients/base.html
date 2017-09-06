@@ -1,0 +1,22 @@
+{% load static bootstrap3 %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery=1 %}
+    <link rel="stylesheet" href="{% static "patients/css/base.css" %}" type="text/css" media="all" />
+    {% block content_css %}{% endblock %}
+    <title>Folio</title>
+  </head>
+
+  <body>
+    <div class="container">
+      {% include "patients/navbar.html" %}
+
+      {% block content %}{% endblock %}
+    </div>
+  </body>
+</html>
