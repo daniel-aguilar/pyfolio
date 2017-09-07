@@ -41,12 +41,14 @@ class PatientCreate(LoginRequiredMixin, CreateView):
     model = Patient
     success_url = SUCCESS_URL
     fields = FIELDS
+    template_name_suffix = '_create_form'
 
 
 class PatientUpdate(LoginRequiredMixin, UpdateView):
     model = Patient
     success_url = SUCCESS_URL
     fields = FIELDS
+    template_name_suffix = '_update_form'
 
 
 class PatientDelete(LoginRequiredMixin, DeleteView):

@@ -2,6 +2,12 @@
 {% load i18n bootstrap3 %}
 
 {% block content %}
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="{% url "patients:index" %}">{% trans "Home" %}</a></li>
+  <li class="breadcrumb-item active">{% trans "Patients" %}</li>
+</ol>
+
 <h1>{% trans "Patients" %}</h1>
 
 <a class="btn btn-success" href="{% url "patients:patient-create" %}">{% trans "Add Patient" %}</a>

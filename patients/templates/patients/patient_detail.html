@@ -2,6 +2,13 @@
 {% load i18n %}
 
 {% block content %}
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="{% url "patients:index" %}">{% trans "Home" %}</a></li>
+  <li class="breadcrumb-item"><a href="{% url "patients:patient-list" %}">{% trans "Patients" %}</a></li>
+  <li class="breadcrumb-item active">{{ patient.full_name }}</li>
+</ol>
+
 <h1>{{ patient.full_name }}</h1>
 
 <div class="panel panel-default">

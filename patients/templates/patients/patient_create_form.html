@@ -2,6 +2,13 @@
 {% load i18n bootstrap3 %}
 
 {% block content %}
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="{% url "patients:index" %}">{% trans "Home" %}</a></li>
+  <li class="breadcrumb-item"><a href="{% url "patients:patient-list" %}">{% trans "Patients" %}</a></li>
+  <li class="breadcrumb-item active">{% trans "Add Patient" %}</li>
+</ol>
+
 <form method="post" class="form">
   {% csrf_token %}
   {% bootstrap_form form %}
