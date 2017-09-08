@@ -23,12 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '%ifngd)nico#_62-6a&y0$&3%u8h$67mzuh&a6jq-+(b8l3_pv'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'folio-cr.herokuapp.com']
+ALLOWED_HOSTS = ['folio-cr.herokuapp.com']
 
 
 # Application definition
@@ -130,4 +130,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Cookies
 
-CSRF_COOKIE_SECURE = os.getenv('CSRF_COOKIE_SECURE')
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
+
+# HTTPS
+
+SECURE_SSL_REDIRECT = True
