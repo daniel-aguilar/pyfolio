@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG')
+DEBUG = False
 
 ALLOWED_HOSTS = ['folio-cr.herokuapp.com']
 
@@ -80,8 +80,7 @@ WSGI_APPLICATION = 'pyfolio.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 # https://devcenter.heroku.com/articles/heroku-postgresql#connecting-in-python
 
-DATABASES = dict()
-DATABASES['default'] = dj_database_url.config()
+DATABASES = {'default': dj_database_url.config()}
 
 
 # Password validation
