@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-10 20:03+0000\n"
+"POT-Creation-Date: 2017-09-10 21:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -104,10 +104,10 @@ msgstr "Iniciar Sesión"
 msgid "Sign Out"
 msgstr "Cerrar Sesión"
 
-#: emr/templates/emr/navbar.html:21
+#: emr/templates/emr/navbar.html:22
 #, python-format
-msgid "Hello, %(user)s"
-msgstr "Hola, %(user)s"
+msgid "Hello, %(user_name)s"
+msgstr "Hola, %(user_name)s"
 
 #: emr/templates/emr/patient_confirm_delete.html:7
 #, python-format
