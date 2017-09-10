@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-10 21:11+0000\n"
+"POT-Creation-Date: 2017-09-10 23:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,8 +80,7 @@ msgstr "Dirección"
 msgid "Patient"
 msgstr "Paciente"
 
-#: emr/models.py:36 emr/templates/emr/index.html:14
-#: emr/templates/emr/patient_create_form.html:8
+#: emr/models.py:36 emr/templates/emr/patient_create_form.html:8
 #: emr/templates/emr/patient_detail.html:8
 #: emr/templates/emr/patient_list.html:8 emr/templates/emr/patient_list.html:11
 #: emr/templates/emr/patient_update_form.html:8
@@ -96,6 +95,10 @@ msgstr "Bienvenido(a) a Folio"
 msgid "Medical records, made easy"
 msgstr "Expedientes médicos, hecho fácil"
 
+#: emr/templates/emr/index.html:14
+msgid "View Patients"
+msgstr "Ver Pacientes"
+
 #: emr/templates/emr/index.html:16 emr/templates/emr/navbar.html:4
 msgid "Sign In"
 msgstr "Iniciar Sesión"
@@ -104,7 +107,7 @@ msgstr "Iniciar Sesión"
 msgid "Sign Out"
 msgstr "Cerrar Sesión"
 
-#: emr/templates/emr/navbar.html:22
+#: emr/templates/emr/navbar.html:21
 #, python-format
 msgid "Hello, %(user_name)s"
 msgstr "Hola, %(user_name)s"
