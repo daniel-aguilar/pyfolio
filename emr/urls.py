@@ -3,7 +3,7 @@ from django.conf.urls import url
 from .views import (Index, PatientCreate, PatientDelete, PatientDetail,
                     PatientList, PatientUpdate)
 
-app_name = 'patients'
+app_name = 'emr'
 urlpatterns = [
     url(r'^$', Index.as_view(), name='index'),
     url(r'^patients$', PatientList.as_view(), name="patient-list"),

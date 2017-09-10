@@ -11,7 +11,7 @@ from .models import Patient
 # Create your views here.
 
 
-SUCCESS_URL = reverse_lazy('patients:patient-list')
+SUCCESS_URL = reverse_lazy('emr:patient-list')
 
 FIELDS = [
     'identification',
@@ -26,7 +26,7 @@ FIELDS = [
 
 
 class Index(TemplateView):
-    template_name = 'patients/index.html'
+    template_name = 'emr/index.html'
 
 
 class PatientList(LoginRequiredMixin, ListView):

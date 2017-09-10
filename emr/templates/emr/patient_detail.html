@@ -1,11 +1,11 @@
-{% extends "patients/base.html" %}
+{% extends "emr/base.html" %}
 {% load i18n %}
 
 {% block content %}
 
 <ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="{% url "patients:index" %}">{% trans "Home" %}</a></li>
-  <li class="breadcrumb-item"><a href="{% url "patients:patient-list" %}">{% trans "Patients" %}</a></li>
+  <li class="breadcrumb-item"><a href="{% url "emr:index" %}">{% trans "Home" %}</a></li>
+  <li class="breadcrumb-item"><a href="{% url "emr:patient-list" %}">{% trans "Patients" %}</a></li>
   <li class="breadcrumb-item active">{{ patient.full_name }}</li>
 </ol>
 
@@ -21,8 +21,8 @@
   <div class="collapse in" id="patient_details">
     <ul class="list-group">
       <li class="list-group-item">
-        <a class="btn btn-primary" href="{% url "patients:patient-update" patient.id %}">{% trans "Update Personal Information" %}</a>
-        <a class="btn btn-danger" href="{% url "patients:patient-delete" patient.id %}">{% trans "Remove Patient" %}</a>
+        <a class="btn btn-primary" href="{% url "emr:patient-update" patient.id %}">{% trans "Update Personal Information" %}</a>
+        <a class="btn btn-danger" href="{% url "emr:patient-delete" patient.id %}">{% trans "Remove Patient" %}</a>
       </li>
 
       <li class="list-group-item">

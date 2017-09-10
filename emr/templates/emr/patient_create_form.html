@@ -1,11 +1,11 @@
-{% extends "patients/base.html" %}
+{% extends "emr/base.html" %}
 {% load i18n bootstrap3 %}
 
 {% block content %}
 
 <ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="{% url "patients:index" %}">{% trans "Home" %}</a></li>
-  <li class="breadcrumb-item"><a href="{% url "patients:patient-list" %}">{% trans "Patients" %}</a></li>
+  <li class="breadcrumb-item"><a href="{% url "emr:index" %}">{% trans "Home" %}</a></li>
+  <li class="breadcrumb-item"><a href="{% url "emr:patient-list" %}">{% trans "Patients" %}</a></li>
   <li class="breadcrumb-item active">{% trans "Add Patient" %}</li>
 </ol>
 
@@ -14,7 +14,7 @@
   {% bootstrap_form form %}
   {% buttons %}
   <button type="submit" class="btn btn-success">{% trans "Submit" %}</button>
-  <a class="btn btn-danger" href="{% url "patients:patient-list" %}">{% trans "Cancel" %}</a>
+  <a class="btn btn-danger" href="{% url "emr:patient-list" %}">{% trans "Cancel" %}</a>
   {% endbuttons %}
 </form>
 {% endblock %}

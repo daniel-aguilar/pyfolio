@@ -1,16 +1,16 @@
-{% extends "patients/base.html" %}
+{% extends "emr/base.html" %}
 {% load i18n bootstrap3 %}
 
 {% block content %}
 
 <ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="{% url "patients:index" %}">{% trans "Home" %}</a></li>
+  <li class="breadcrumb-item"><a href="{% url "emr:index" %}">{% trans "Home" %}</a></li>
   <li class="breadcrumb-item active">{% trans "Patients" %}</li>
 </ol>
 
 <h1>{% trans "Patients" %}</h1>
 
-<a class="btn btn-success" href="{% url "patients:patient-create" %}">{% trans "Add Patient" %}</a>
+<a class="btn btn-success" href="{% url "emr:patient-create" %}">{% trans "Add Patient" %}</a>
 
 <table class="table">
   <thead>
@@ -28,9 +28,9 @@
       <td>{{ patient.first_name }}</td>
       <td>{{ patient.last_name }}</td>
       <td>
-        <a href="{% url "patients:patient-detail" patient.id %}">{% bootstrap_icon "eye-open"%}</a>
-        <a href="{% url "patients:patient-update" patient.id %}">{% bootstrap_icon "pencil"%}</a>
-        <a href="{% url "patients:patient-delete" patient.id %}">{% bootstrap_icon "trash"%}</a>
+        <a href="{% url "emr:patient-detail" patient.id %}">{% bootstrap_icon "eye-open"%}</a>
+        <a href="{% url "emr:patient-update" patient.id %}">{% bootstrap_icon "pencil"%}</a>
+        <a href="{% url "emr:patient-delete" patient.id %}">{% bootstrap_icon "trash"%}</a>
       </td>
     </tr>
     {% endfor %}

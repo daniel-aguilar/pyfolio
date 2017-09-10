@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width" />
     {% bootstrap_css %}
     {% bootstrap_javascript jquery=1 %}
-    <link rel="stylesheet" href="{% static "patients/css/base.css" %}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static "emr/css/base.css" %}" type="text/css" media="all" />
     {% block content_css %}{% endblock %}
     <title>Folio</title>
   </head>
 
   <body>
     <div class="container">
-      {% include "patients/navbar.html" %}
+      {% include "emr/navbar.html" %}
 
       {% block content %}{% endblock %}
     </div>

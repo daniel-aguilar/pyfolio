@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
-    'patients',
+    'emr',
     'bootstrap3',
 ]
 
@@ -102,8 +102,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LOGIN_REDIRECT_URL = reverse_lazy('patients:index')
-LOGOUT_REDIRECT_URL = reverse_lazy('patients:index')
+LOGIN_REDIRECT_URL = reverse_lazy('emr:index')
+LOGOUT_REDIRECT_URL = reverse_lazy('emr:index')
 
 
 # Internationalization
@@ -165,7 +165,7 @@ LOGGING = {
             'handlers': ['console', 'file'],
             'level': 'DEBUG',
         },
-        'patients': {
+        'emr': {
             'handlers': ['console', 'file'],
             'level': 'DEBUG',
         },

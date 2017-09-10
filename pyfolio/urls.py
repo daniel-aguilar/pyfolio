@@ -19,8 +19,8 @@ from django.contrib.auth import views as auth_views
 from django.views.generic.base import RedirectView
 
 urlpatterns = [
-    url(r'^$', RedirectView.as_view(pattern_name='patients:index')),
+    url(r'^$', RedirectView.as_view(pattern_name='emr:index')),
     url(r'^accounts/', include('django.contrib.auth.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^emr/', include('patients.urls')),
+    url(r'^emr/', include('emr.urls')),
 ]

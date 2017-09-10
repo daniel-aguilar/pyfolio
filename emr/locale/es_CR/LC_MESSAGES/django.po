@@ -1,0 +1,162 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-09-10 20:03+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: emr/apps.py:7
+msgid "EMR"
+msgstr "Expediente Médico Digital"
+
+#: emr/models.py:18
+msgid "Not Known"
+msgstr "Desconocido"
+
+#: emr/models.py:19
+msgid "Male"
+msgstr "Masculino"
+
+#: emr/models.py:20
+msgid "Female"
+msgstr "Femenino"
+
+#: emr/models.py:21
+msgid "Not Applicable"
+msgstr "No Aplica"
+
+#: emr/models.py:24 emr/templates/emr/patient_detail.html:31
+#: emr/templates/emr/patient_list.html:18
+msgid "Identification"
+msgstr "Cédula de Identidad"
+
+#: emr/models.py:25
+msgid "Date Added"
+msgstr "Fecha de Ingreso"
+
+#: emr/models.py:26 emr/templates/emr/patient_detail.html:36
+#: emr/templates/emr/patient_list.html:19
+msgid "First Name"
+msgstr "Nombre"
+
+#: emr/models.py:27 emr/templates/emr/patient_detail.html:41
+#: emr/templates/emr/patient_list.html:20
+msgid "Last Name"
+msgstr "Apellido"
+
+#: emr/models.py:28 emr/templates/emr/patient_detail.html:46
+msgid "Sex"
+msgstr "Sexo"
+
+#: emr/models.py:29 emr/templates/emr/patient_detail.html:51
+msgid "Date of Birth"
+msgstr "Fecha de Nacimiento"
+
+#: emr/models.py:30 emr/templates/emr/patient_detail.html:61
+msgid "Occupation"
+msgstr "Ocupación"
+
+#: emr/models.py:31 emr/templates/emr/patient_detail.html:66
+msgid "Phone Number"
+msgstr "Número de Teléfono"
+
+#: emr/models.py:32 emr/templates/emr/patient_detail.html:73
+msgid "Address"
+msgstr "Dirección"
+
+#: emr/models.py:35
+msgid "Patient"
+msgstr "Paciente"
+
+#: emr/models.py:36 emr/templates/emr/index.html:14
+#: emr/templates/emr/patient_create_form.html:8
+#: emr/templates/emr/patient_detail.html:8
+#: emr/templates/emr/patient_list.html:8 emr/templates/emr/patient_list.html:11
+#: emr/templates/emr/patient_update_form.html:8
+msgid "Patients"
+msgstr "Pacientes"
+
+#: emr/templates/emr/index.html:10
+msgid "Welcome to Folio"
+msgstr "Bienvenido(a) a Folio"
+
+#: emr/templates/emr/index.html:11
+msgid "Medical records, made easy"
+msgstr "Expedientes médicos, hecho fácil"
+
+#: emr/templates/emr/index.html:16 emr/templates/emr/navbar.html:4
+msgid "Sign In"
+msgstr "Iniciar Sesión"
+
+#: emr/templates/emr/navbar.html:3
+msgid "Sign Out"
+msgstr "Cerrar Sesión"
+
+#: emr/templates/emr/navbar.html:21
+#, python-format
+msgid "Hello, %(user)s"
+msgstr "Hola, %(user)s"
+
+#: emr/templates/emr/patient_confirm_delete.html:7
+#, python-format
+msgid "Are you sure you want to remove \"%(object)s\"?"
+msgstr "¿Está seguro(a) que desea remover a \"%(object)s\"?"
+
+#: emr/templates/emr/patient_confirm_delete.html:8
+msgid "Remove"
+msgstr "Remover"
+
+#: emr/templates/emr/patient_create_form.html:7
+#: emr/templates/emr/patient_detail.html:7
+#: emr/templates/emr/patient_list.html:7
+#: emr/templates/emr/patient_update_form.html:7
+msgid "Home"
+msgstr "Inicio"
+
+#: emr/templates/emr/patient_create_form.html:9
+#: emr/templates/emr/patient_list.html:13
+msgid "Add Patient"
+msgstr "Ingresar Paciente"
+
+#: emr/templates/emr/patient_create_form.html:16
+#: emr/templates/emr/patient_update_form.html:17
+msgid "Submit"
+msgstr "Guardar"
+
+#: emr/templates/emr/patient_create_form.html:17
+#: emr/templates/emr/patient_update_form.html:18
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: emr/templates/emr/patient_detail.html:17
+msgid "Personal Information"
+msgstr "Información Personal"
+
+#: emr/templates/emr/patient_detail.html:24
+#: emr/templates/emr/patient_update_form.html:10
+msgid "Update Personal Information"
+msgstr "Actualizar Información Personal"
+
+#: emr/templates/emr/patient_detail.html:25
+msgid "Remove Patient"
+msgstr "Remover Paciente"
+
+#: emr/templates/emr/patient_detail.html:56
+msgid "Age"
+msgstr "Edad"
+
+#: emr/templates/emr/patient_list.html:21
+msgid "Options"
+msgstr "Opciones"
