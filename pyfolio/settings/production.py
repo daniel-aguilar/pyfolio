@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'core',
     'patients',
     'bootstrap3',
 ]
@@ -160,7 +161,7 @@ LOGGING = {
         }
     },
     'loggers': {
-        'pyfolio': {
+        'core': {
             'handlers': ['console', 'file'],
             'level': 'DEBUG',
         },
