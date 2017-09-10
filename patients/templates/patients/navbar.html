@@ -1,4 +1,7 @@
-{% load i18n %}
+{% load i18n nav %}
+
+{% trans "Sign Out" as sign_out %}
+{% trans "Sign In" as sign_in %}
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -15,10 +18,10 @@
       <ul class="nav navbar-nav navbar-right">
 
         {% if user.is_authenticated %}
-        <li><p class="navbar-text">{% blocktrans %}Hello, {{ user }}{% endblocktrans %}</p></li>
-        <li><a href="{% url "logout" %}">{% trans "Sign Out" %}</a></li>
+          <li><p class="navbar-text">{% blocktrans %}Hello, {{ user }}{% endblocktrans %}</p></li>
+          {% navlink "logout" sign_out %}
         {% else %}
-        <li><a href="{% url "login" %}">{% trans "Sign In" %}</a></li>
+          {% navlink "login" sign_in %}
         {% endif %}
 
       </ul>
