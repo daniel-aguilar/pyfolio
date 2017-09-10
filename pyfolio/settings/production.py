@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'core',
     'emr',
     'bootstrap3',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
