@@ -28,9 +28,9 @@
       <td>{{ patient.first_name }}</td>
       <td>{{ patient.last_name }}</td>
       <td>
-        <a href="{% url "emr:patient-detail" patient.id %}">{% bootstrap_icon "eye-open"%}</a>
-        <a href="{% url "emr:patient-update" patient.id %}">{% bootstrap_icon "pencil"%}</a>
-        <a href="{% url "emr:patient-delete" patient.id %}">{% bootstrap_icon "trash"%}</a>
+        <a class="btn btn-default" href="{% url "emr:patient-detail" patient.id %}">{% bootstrap_icon "eye-open"%}</a>
+        <a class="btn btn-default" href="{% url "emr:patient-update" patient.id %}">{% bootstrap_icon "pencil"%}</a>
+        <a class="btn btn-default" href="{% url "emr:patient-delete" patient.id %}">{% bootstrap_icon "trash"%}</a>
       </td>
     </tr>
     {% endfor %}
