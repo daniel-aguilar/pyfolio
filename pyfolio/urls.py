@@ -16,10 +16,10 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
-from django.views.generic.base import RedirectView
+from django.views.generic.base import TemplateView
 
 urlpatterns = [
-    url(r'^$', RedirectView.as_view(pattern_name='emr:index')),
+    url(r'^$', TemplateView.as_view(template_name='pyfolio/index.html'), name='index'),
     url(r'^accounts/', include('django.contrib.auth.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^emr/', include('emr.urls')),

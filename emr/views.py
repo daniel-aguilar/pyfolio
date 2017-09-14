@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.shortcuts import get_list_or_404, render
 from django.urls import reverse, reverse_lazy
 from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
-                                  TemplateView, UpdateView)
+                                  UpdateView)
 
 from .models import Patient
 
@@ -23,10 +23,6 @@ FIELDS = [
     'phone_number',
     'address',
 ]
-
-
-class Index(TemplateView):
-    template_name = 'emr/index.html'
 
 
 class PatientList(LoginRequiredMixin, ListView):

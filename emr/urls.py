@@ -1,11 +1,10 @@
 from django.conf.urls import url
 
-from .views import (Index, PatientCreate, PatientDelete, PatientDetail,
-                    PatientList, PatientUpdate)
+from .views import (PatientCreate, PatientDelete, PatientDetail, PatientList,
+                    PatientUpdate)
 
 app_name = 'emr'
 urlpatterns = [
-    url(r'^$', Index.as_view(), name='index'),
     url(r'^patients$', PatientList.as_view(), name="patient-list"),
     url(r'^patients/(?P<pk>\d+)$', PatientDetail.as_view(), name="patient-detail"),
     url(r'^patients/create$', PatientCreate.as_view(), name="patient-create"),

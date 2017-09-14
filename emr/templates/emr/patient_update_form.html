@@ -1,10 +1,10 @@
-{% extends "emr/base.html" %}
+{% extends "pyfolio/base.html" %}
 {% load i18n bootstrap3 %}
 
 {% block content %}
 
 <ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="{% url "emr:index" %}">{% trans "Home" %}</a></li>
+  <li class="breadcrumb-item"><a href="{% url "index" %}">{% trans "Home" %}</a></li>
   <li class="breadcrumb-item"><a href="{% url "emr:patient-list" %}">{% trans "Patients" %}</a></li>
   <li class="breadcrumb-item"><a href="{% url "emr:patient-detail" object.id %}">{{ object }}</a></li>
   <li class="breadcrumb-item active">{% trans "Update Personal Information" %}</li>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-10 23:29+0000\n"
+"POT-Creation-Date: 2017-09-13 03:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -86,31 +86,6 @@ msgstr "Paciente"
 #: emr/templates/emr/patient_update_form.html:8
 msgid "Patients"
 msgstr "Pacientes"
-
-#: emr/templates/emr/index.html:10
-msgid "Welcome to Folio"
-msgstr "Bienvenido(a) a Folio"
-
-#: emr/templates/emr/index.html:11
-msgid "Medical records, made easy"
-msgstr "Expedientes médicos, hecho fácil"
-
-#: emr/templates/emr/index.html:14
-msgid "View Patients"
-msgstr "Ver Pacientes"
-
-#: emr/templates/emr/index.html:16 emr/templates/emr/navbar.html:4
-msgid "Sign In"
-msgstr "Iniciar Sesión"
-
-#: emr/templates/emr/navbar.html:3
-msgid "Sign Out"
-msgstr "Cerrar Sesión"
-
-#: emr/templates/emr/navbar.html:21
-#, python-format
-msgid "Hello, %(user_name)s"
-msgstr "Hola, %(user_name)s"
 
 #: emr/templates/emr/patient_confirm_delete.html:7
 #, python-format
