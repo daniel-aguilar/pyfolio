@@ -7,7 +7,6 @@ from django.utils.translation import ugettext_lazy as _
 # Create your models here.
 
 
-# TODO: Set identification field as unique
 class Patient(models.Model):
 
     NOT_KNOWN = 0
@@ -22,7 +21,11 @@ class Patient(models.Model):
         (NOT_APPLICABLE, _('Not Applicable')),
     ]
 
-    identification = models.CharField(_('Identification'), max_length=9)
+    identification = models.CharField(
+        _('Identification'),
+        max_length=9,
+        unique=True
+    )
     date_added = models.DateTimeField(_('Date Added'), auto_now_add=True)
     first_name = models.CharField(_('First Name'), max_length=45)
     last_name = models.CharField(_('Last Name'), max_length=45)

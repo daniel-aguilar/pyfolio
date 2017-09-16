@@ -9,6 +9,7 @@ from .models import MedicalRecord, Patient
 
 # Create your views here.
 
+
 # TODO: Move patient templates to a 'patients' directory
 
 class PatientList(LoginRequiredMixin, ListView):
