@@ -1,0 +1,20 @@
+{% extends "pyfolio/base.html" %}
+{% load i18n bootstrap3 %}
+
+{% block content %}
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="{% url "index" %}">{% trans "Home" %}</a></li>
+  <li class="breadcrumb-item"><a href="{% url "emr:patient-list" %}">{% trans "Patients" %}</a></li>
+  <li class="breadcrumb-item"><a href="{% url "emr:patient-detail" patient.id %}">{{ patient.full_name }}</a></li>
+  <li class="breadcrumb-item active">{% trans "Issue Medical Record" %}</li>
+</ol>
+
+<form method="post" class="form">
+  {% csrf_token %}
+  {% bootstrap_form form %}
+  {% buttons %}
+  <button type="submit" class="btn btn-success">{% trans "Submit" %}</button>
+  <a class="btn btn-danger" href="{% url "emr:patient-detail" patient.id %}">{% trans "Cancel" %}</a>
+  {% endbuttons %}
+</form>
+{% endblock %}

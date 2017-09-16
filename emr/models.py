@@ -7,6 +7,7 @@ from django.utils.translation import ugettext_lazy as _
 # Create your models here.
 
 
+# TODO: Set identification field as unique
 class Patient(models.Model):
 
     NOT_KNOWN = 0
@@ -44,5 +45,31 @@ class Patient(models.Model):
     def age(self):
         return relativedelta(datetime.now(), self.date_of_birth).years
 
+    def has_medical_record(self):
+        return hasattr(self, 'medical_record')
+
     def __str__(self):
         return self.full_name()
+
+
+class MedicalRecord(models.Model):
+
+    patient = models.OneToOneField(
+        Patient,
+        on_delete=models.CASCADE,
+        related_name='medical_record'
+    )
+    current_condition = models.TextField(_('Current Condition'))
+    current_treatment = models.TextField(_('Current Treatment'))
+    reference = models.TextField(_('Reference'))
+    physical_exploration = models.TextField(_('Physical Exploration'))
+    diagnosis = models.TextField(_('Diagnosis'))
+    treatment_to_follow = models.TextField(_('Treatment to Follow'))
+    additional_notes = models.TextField(_('Additional Notes'))
+
+    class Meta:
+        verbose_name = _('Medical Record')
+        verbose_name_plural = _('Medical Records')
+
+    def __str__(self):
+        return _("%(patient_full_name)s's Medical Record") % {'patient_full_name': self.patient.full_name()}

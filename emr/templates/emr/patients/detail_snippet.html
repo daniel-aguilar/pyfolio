@@ -1,0 +1,67 @@
+{% load i18n %}
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="#personal-information">{% trans "Personal Information" %}</a>
+    </h1>
+  </div>
+
+  <div id="personal-information" class="collapse">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <a class="btn btn-primary" href="{% url "emr:patient-update" patient.id %}">{% trans "Update Personal Information" %}</a>
+        <a class="btn btn-danger" href="{% url "emr:patient-delete" patient.id %}">{% trans "Remove Patient" %}</a>
+      </li>
+
+      <li class="list-group-item">
+        <table class="table table-striped">
+          <tr>
+            <th>{% trans "Identification" %}</th>
+            <td>{{ patient.identification }}</td>
+          </tr>
+
+          <tr>
+            <th>{% trans "First Name" %}</th>
+            <td>{{ patient.first_name }}</td>
+          </tr>
+
+          <tr>
+            <th>{% trans "Last Name" %}</th>
+            <td>{{ patient.last_name }}</td>
+          </tr>
+
+          <tr>
+            <th>{% trans "Sex" %}</th>
+            <td>{{ patient.sex_verbose }}</td>
+          </tr>
+
+          <tr>
+            <th>{% trans "Date of Birth" %}</th>
+            <td>{{ patient.date_of_birth }}</td>
+          </tr>
+
+          <tr>
+            <th>{% trans "Age" %}</th>
+            <td>{{ patient.age }}</td>
+          </tr>
+
+          <tr>
+            <th>{% trans "Occupation" %}</th>
+            <td>{{ patient.occupation }}</td>
+          </tr>
+
+          <tr>
+            <th>{% trans "Phone Number" %}</th>
+            <td>{{ patient.phone_number }}</td>
+          </tr>
+        </table>
+      </li>
+
+      <li class="list-group-item">
+        <h2>{% trans "Address" %}</h2>
+        <p>{{ patient.address }}</p>
+      </li>
+    </ul>
+  </div>
+</div>
