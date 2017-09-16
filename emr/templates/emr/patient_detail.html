@@ -1,5 +1,5 @@
 {% extends "pyfolio/base.html" %}
-{% load i18n %}
+{% load i18n bootstrap3 %}
 
 {% block content %}
 
@@ -8,6 +8,8 @@
   <li class="breadcrumb-item"><a href="{% url "emr:patient-list" %}">{% trans "Patients" %}</a></li>
   <li class="breadcrumb-item active">{{ patient.full_name }}</li>
 </ol>
+
+{% bootstrap_messages %}
 
 <h1>{{ patient.full_name }}</h1>
 

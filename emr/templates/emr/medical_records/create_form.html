@@ -6,7 +6,7 @@
   <li class="breadcrumb-item"><a href="{% url "index" %}">{% trans "Home" %}</a></li>
   <li class="breadcrumb-item"><a href="{% url "emr:patient-list" %}">{% trans "Patients" %}</a></li>
   <li class="breadcrumb-item"><a href="{% url "emr:patient-detail" patient.id %}">{{ patient.full_name }}</a></li>
-  <li class="breadcrumb-item active">{% trans "Issue Medical Record" %}</li>
+  <li class="breadcrumb-item active">{% trans "Create Medical Record" %}</li>
 </ol>
 
 <form method="post" class="form">
