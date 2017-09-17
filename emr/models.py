@@ -68,7 +68,7 @@ class MedicalRecord(models.Model):
     physical_exploration = models.TextField(_('Physical Exploration'))
     diagnosis = models.TextField(_('Diagnosis'))
     treatment_to_follow = models.TextField(_('Treatment to Follow'))
-    additional_notes = models.TextField(_('Additional Notes'))
+    additional_notes = models.TextField(_('Additional Notes'), blank=True)
 
     class Meta:
         verbose_name = _('Medical Record')
