@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-16 22:46+0000\n"
+"POT-Creation-Date: 2017-09-17 03:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -89,43 +89,43 @@ msgstr "Paciente"
 msgid "Patients"
 msgstr "Pacientes"
 
-#: emr/models.py:66 emr/templates/emr/medical_records/detail_snippet.html:23
+#: emr/models.py:65 emr/templates/emr/medical_records/detail_snippet.html:23
 msgid "Current Condition"
 msgstr "Padecimiento Actual (PA)"
 
-#: emr/models.py:67 emr/templates/emr/medical_records/detail_snippet.html:27
+#: emr/models.py:66 emr/templates/emr/medical_records/detail_snippet.html:27
 msgid "Current Treatment"
 msgstr "Tratamiento Actual (Tx. A)"
 
-#: emr/models.py:68 emr/templates/emr/medical_records/detail_snippet.html:31
+#: emr/models.py:67 emr/templates/emr/medical_records/detail_snippet.html:31
 msgid "Reference"
 msgstr "Referencia"
 
-#: emr/models.py:69 emr/templates/emr/medical_records/detail_snippet.html:35
+#: emr/models.py:68 emr/templates/emr/medical_records/detail_snippet.html:35
 msgid "Physical Exploration"
 msgstr "Exploración Física (Ex)"
 
-#: emr/models.py:70 emr/templates/emr/medical_records/detail_snippet.html:39
+#: emr/models.py:69 emr/templates/emr/medical_records/detail_snippet.html:39
 msgid "Diagnosis"
 msgstr "Diagnóstico (Dx)"
 
-#: emr/models.py:71 emr/templates/emr/medical_records/detail_snippet.html:43
+#: emr/models.py:70 emr/templates/emr/medical_records/detail_snippet.html:43
 msgid "Treatment to Follow"
 msgstr "Tratamiento a Seguir (TF)"
 
-#: emr/models.py:72 emr/templates/emr/medical_records/detail_snippet.html:47
+#: emr/models.py:71 emr/templates/emr/medical_records/detail_snippet.html:47
 msgid "Additional Notes"
 msgstr "Notas Adicionales"
 
-#: emr/models.py:75 emr/templates/emr/medical_records/detail_snippet.html:6
+#: emr/models.py:74 emr/templates/emr/medical_records/detail_snippet.html:6
 msgid "Medical Record"
 msgstr "Expediente Médico"
 
-#: emr/models.py:76
+#: emr/models.py:75
 msgid "Medical Records"
 msgstr "Expedientes Médicos"
 
-#: emr/models.py:79
+#: emr/models.py:78
 #, python-format
 msgid "%(patient_full_name)s's Medical Record"
 msgstr "Expediente Médico de %(patient_full_name)s"
