@@ -59,7 +59,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'pyfolio.urls'
 
-# TODO: Remove pyfolio namespace from project level templates
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

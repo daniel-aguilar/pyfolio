@@ -7,15 +7,15 @@
     <meta name="viewport" content="width=device-width" />
     {% bootstrap_css %}
     {% bootstrap_javascript jquery=1 %}
-    <link rel="stylesheet" href="{% static "pyfolio/css/base.css" %}" type="text/css" media="all" />
-    <link rel="icon" href="{% static "pyfolio/img/favicon.ico" %}" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static "css/base.css" %}" type="text/css" media="all" />
+    <link rel="icon" href="{% static "img/favicon.ico" %}" type="image/x-icon" />
     {% block content_css %}{% endblock %}
     <title>Folio</title>
   </head>
 
   <body>
     <div class="container">
-      {% include "pyfolio/navbar.html" %}
+      {% include "navbar.html" %}
 
       {% block content %}{% endblock %}
     </div>
