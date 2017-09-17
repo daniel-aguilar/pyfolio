@@ -13,21 +13,21 @@ from .models import MedicalRecord, Patient
 # Create your views here.
 
 
-# TODO: Move patient templates to a 'patients' directory
-
 class PatientList(LoginRequiredMixin, ListView):
     model = Patient
+    template_name = 'emr/patients/list.html'
 
 
 class PatientDetail(LoginRequiredMixin, DetailView):
     model = Patient
+    template_name = 'emr/patients/detail.html'
 
 
 class PatientCreate(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Patient
+    template_name = 'emr/patients/create_form.html'
     success_url = reverse_lazy('emr:patient-list')
     fields = '__all__'
-    template_name_suffix = '_create_form'
     success_message = _('Patient %(patient_full_name)s added')
 
     def get_success_message(self, cleaned_data):
@@ -37,8 +37,8 @@ class PatientCreate(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
 class PatientUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Patient
+    template_name = 'emr/patients/update_form.html'
     fields = '__all__'
-    template_name_suffix = '_update_form'
     success_message = _('Personal information updated')
 
     def get_success_url(self):
@@ -48,6 +48,7 @@ class PatientUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
 
 class PatientDelete(LoginRequiredMixin, DeleteView):
     model = Patient
+    template_name = 'emr/patients/confirm_delete.html'
     success_url = reverse_lazy('emr:patient-list')
     success_message = _('Patient %(patient_full_name)s removed')
 
