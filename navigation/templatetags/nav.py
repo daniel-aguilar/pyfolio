@@ -1,6 +1,6 @@
 from django import template
 from django.urls import reverse
-from django.utils.html import escape, format_html
+from django.utils.html import escape
 
 register = template.Library()
 
