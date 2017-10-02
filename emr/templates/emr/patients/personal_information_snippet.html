@@ -16,6 +16,13 @@
 
       <li class="list-group-item">
         <table class="table table-striped">
+          {% if patient.has_profile_picture %}
+          <tr>
+            <th>{% trans "Profile Picture" %}</th>
+            <td><img src="{{ patient.profile_picture.url }}" class="img-responsive img-rounded profile-picture"></td>
+          </tr>
+          {% endif %}
+
           <tr>
             <th>{% trans "Identification" %}</th>
             <td>{{ patient.identification }}</td>

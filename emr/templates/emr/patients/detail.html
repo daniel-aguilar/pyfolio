@@ -1,8 +1,11 @@
 {% extends "base.html" %}
-{% load i18n bootstrap3 %}
+{% load static i18n bootstrap3 %}
+
+{% block content_css %}
+<link rel="stylesheet" href="{% static "emr/css/patient_detail.css" %}" type="text/css" media="all" />
+{% endblock %}
 
 {% block content %}
-
 <ol class="breadcrumb">
   <li class="breadcrumb-item"><a href="{% url "index" %}">{% trans "Home" %}</a></li>
   <li class="breadcrumb-item"><a href="{% url "emr:patient-list" %}">{% trans "Patients" %}</a></li>

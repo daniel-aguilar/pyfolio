@@ -1,10 +1,13 @@
 from datetime import datetime
+from uuid import uuid4
 
 from dateutil.relativedelta import relativedelta
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-# Create your models here.
+
+def patient_profile_picture_path(instance, filename):
+    return 'profile_pictures/{0}'.format(str(uuid4()))
 
 
 class Patient(models.Model):
@@ -27,6 +30,11 @@ class Patient(models.Model):
         unique=True
     )
     date_added = models.DateTimeField(_('Date Added'), auto_now_add=True)
+    profile_picture = models.ImageField(
+        _('Profile Picture'),
+        upload_to=patient_profile_picture_path,
+        blank=True,
+    )
     first_name = models.CharField(_('First Name'), max_length=45)
     last_name = models.CharField(_('Last Name'), max_length=45)
     sex = models.IntegerField(_('Sex'), choices=SEX_CHOICES, default=NOT_KNOWN)
@@ -50,6 +58,9 @@ class Patient(models.Model):
 
     def has_medical_record(self):
         return hasattr(self, 'medical_record')
+
+    def has_profile_picture(self):
+        return bool(self.profile_picture)
 
     def __str__(self):
         return self.full_name()
