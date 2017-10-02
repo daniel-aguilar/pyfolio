@@ -9,7 +9,7 @@
   <li class="breadcrumb-item active">{% trans "Add Patient" %}</li>
 </ol>
 
-<form method="post" class="form">
+<form method="post" enctype="multipart/form-data" class="form">
   {% csrf_token %}
   {% bootstrap_form form %}
   {% buttons %}
