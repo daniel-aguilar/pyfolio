@@ -1,0 +1,13 @@
+language: python
+python:
+  - '3.6'
+install:
+  - pip install -r requirements.txt
+script:
+  - make test
+deploy:
+  provider: heroku
+  app: folio-cr
+  run: ./manage.py migrate
+  api_key:
+    secure: ev9uDF08o2gwCt8h+rtQDeeUt3kwASra73X0wqDSXY62HcIkbQeNY2aLZzYLLbWhXiRADskMN2Qe3gJquBnuYc2y6T2JAsSxHxdBbjGTReIsc3djEin1wf6+qVU0jGXJjQ4q0hbRrKTfRIMMZhTR6uXokEReovT3R1vS2e0v2zB2dVyr5AmUw27Nrkzi91jnxynCJ42P0rWdiS7Q+Ah/8tg4k7P/J5n2IDTyjg0GKijk9eABLqFoNnFEkbQThBG5HObO87Td5OUoqmieh6uJ4LhViyT8u19b7NyRWTLYUNNOghKwB6/fo8CWxiW//DJKBgKBMuhND3G/gzWW3MSBP1sJ+4gq7BZ0LIgLbAKabdVRDBx3EqJ3OrLuPdOGSGNVaMEhL9Axt+31wEUtiJ3f9pvEsCCoZc8lFtdz8fpB1eRvHsT4BxHRoRQiSArLhQUDwAfCnvKB2jCBF/7cNymFDyrUzSRdOJbKxtBdkJIKZVPVw+Qa5ICJ4XbFufth6EamGV2plvi8hzfstoCHF3+92jDhRdofZGqmb56Da/M2yg4Dm6yp/343VhFXKhE/uOudYiBgRWDRw7+ZKRvJlqgwJMNyNoWQgrX/dB69glGcBHpdQHqTWYZZMnNj/QhGNcPMXKpuQuOOpDbrL4rWM7A59BLiZacv0qw96feQ/EAeYQQ=
