@@ -47,6 +47,8 @@ class Patient(models.Model):
         verbose_name = _('Patient')
         verbose_name_plural = _('Patients')
 
+        ordering = ['id']
+
     def full_name(self):
         return '{0} {1}'.format(self.first_name, self.last_name)
 
