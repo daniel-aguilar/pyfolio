@@ -84,6 +84,7 @@ class MedicalRecord(models.Model):
     additional_notes = models.TextField(_('Additional Notes'), blank=True)
 
     class Meta:
+        db_table = 'emr_medical_record'
         verbose_name = _('Medical Record')
         verbose_name_plural = _('Medical Records')
 
