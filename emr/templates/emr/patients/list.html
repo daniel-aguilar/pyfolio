@@ -1,5 +1,14 @@
 {% extends "base.html" %}
-{% load i18n bootstrap3 %}
+{% load static i18n bootstrap3 %}
+
+{% block head %}
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" charset="utf-8"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js" charset="utf-8"></script>
+
+<link rel="stylesheet" href="{% static "emr/css/patients/list.css" %}">
+<script src="{% static "emr/js/patients/list.js" %}" charset="utf-8"></script>
+{% endblock %}
 
 {% block content %}
 <ol class="breadcrumb">
@@ -13,28 +22,16 @@
 
 <a class="btn btn-success" href="{% url "emr:patient-create" %}">{% trans "Add Patient" %}</a>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>{% trans "Identification" %}</th>
-      <th>{% trans "First Name" %}</th>
-      <th>{% trans "Last Name" %}</th>
-      <th>{% trans "Options" %}</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for patient in patient_list %}
-    <tr>
-      <td>{{ patient.identification }}</td>
-      <td>{{ patient.first_name }}</td>
-      <td>{{ patient.last_name }}</td>
-      <td>
-        <a class="btn btn-default" href="{% url "emr:patient-detail" patient.id %}">{% bootstrap_icon "eye-open"%}</a>
-        <a class="btn btn-default" href="{% url "emr:patient-update" patient.id %}">{% bootstrap_icon "pencil"%}</a>
-        <a class="btn btn-default" href="{% url "emr:patient-delete" patient.id %}">{% bootstrap_icon "trash"%}</a>
-      </td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
+<div id="patient-list-container">
+  <table class="table" id="patient-list">
+    <thead>
+      <tr>
+        <th>{% trans "Identification" %}</th>
+        <th>{% trans "First Name" %}</th>
+        <th>{% trans "Last Name" %}</th>
+        <th>{% trans "Options" %}</th>
+      </tr>
+    </thead>
+  </table>
+</div>
 {% endblock %}

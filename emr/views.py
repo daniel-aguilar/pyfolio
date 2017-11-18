@@ -1,11 +1,15 @@
+import json
+
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
+from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse, reverse_lazy
 from django.utils.translation import ugettext_lazy as _
-from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
-                                  UpdateView, View)
+from django.views.generic import (CreateView, DeleteView, DetailView,
+                                  TemplateView, UpdateView, View)
+from pkg_resources import resource_stream
 
 from .forms import MedicalRecordForm
 from .models import MedicalRecord, Patient
@@ -13,9 +17,17 @@ from .models import MedicalRecord, Patient
 # Create your views here.
 
 
-class PatientList(LoginRequiredMixin, ListView):
-    model = Patient
+class PatientList(LoginRequiredMixin, TemplateView):
     template_name = 'emr/patients/list.html'
+
+
+class PatientListApi(LoginRequiredMixin, View):
+
+    def get(self, request, *args, **kwargs):
+        patient_fields = ['id', 'identification', 'first_name', 'last_name']
+        patient_list = Patient.objects.values(*patient_fields)
+
+        return JsonResponse({'data': list(patient_list)})
 
 
 class PatientDetail(LoginRequiredMixin, DetailView):
@@ -103,3 +115,10 @@ class MedicalRecordUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
         medical_record = self.get_object()
         patient_id = medical_record.patient.id
         return reverse('emr:patient-detail', args=[patient_id])
+
+
+class DataTablesLanguageFile(LoginRequiredMixin, View):
+
+    def get(self, request, *args, **kwargs):
+        with resource_stream('emr.resources.datatables', 'spanish.json') as language_file:
+            return JsonResponse(json.load(language_file))

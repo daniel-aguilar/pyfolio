@@ -47,6 +47,8 @@ class Patient(models.Model):
         verbose_name = _('Patient')
         verbose_name_plural = _('Patients')
 
+        ordering = ['id']
+
     def full_name(self):
         return '{0} {1}'.format(self.first_name, self.last_name)
 
@@ -82,6 +84,7 @@ class MedicalRecord(models.Model):
     additional_notes = models.TextField(_('Additional Notes'), blank=True)
 
     class Meta:
+        db_table = 'emr_medical_record'
         verbose_name = _('Medical Record')
         verbose_name_plural = _('Medical Records')
 
