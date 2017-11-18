@@ -1,7 +1,7 @@
 .PHONY: lint isort test clean
 
 lint: isort
-	pycodestyle --show-source --show-pep8 .
+	flake8
 
 isort:
 	isort -rc --atomic .

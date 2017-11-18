@@ -7,4 +7,4 @@ class EMRConfig(AppConfig):
     verbose_name = _('EMR')
 
     def ready(self):
-        from .signals import patient_file_handler
+        from .signals import patient_file_handler  # noqa: F401
