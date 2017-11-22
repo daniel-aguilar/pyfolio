@@ -49,6 +49,9 @@ class Patient(models.Model):
 
         ordering = ['id']
 
+    def __str__(self):
+        return self.full_name()
+
     def full_name(self):
         return '{0} {1}'.format(self.first_name, self.last_name)
 
@@ -63,9 +66,6 @@ class Patient(models.Model):
 
     def has_profile_picture(self):
         return bool(self.profile_picture)
-
-    def __str__(self):
-        return self.full_name()
 
 
 class MedicalRecord(models.Model):
