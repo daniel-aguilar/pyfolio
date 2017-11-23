@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 $(function() {
     const DATATABLES_LANGUAGE_URL = "/emr/api/datatables/language/";
@@ -7,7 +7,7 @@ $(function() {
     const UPDATE_PATIENT_URL = "/emr/patients/update/";
     const DELETE_PATIENT_URL = "/emr/patients/delete/";
 
-    $('#patient-list').DataTable({
+    $("#patient-list").DataTable({
         language: {
             url: DATATABLES_LANGUAGE_URL,
         },
