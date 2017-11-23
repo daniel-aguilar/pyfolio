@@ -1,8 +1,11 @@
 {% extends "base.html" %}
-{% load i18n bootstrap3 %}
+{% load static i18n bootstrap3 %}
+
+{% block head %}
+<script src="{% static "emr/js/patients/create_update.js" %}" charset="utf-8"></script>
+{% endblock %}
 
 {% block content %}
-
 <ol class="breadcrumb">
   <li class="breadcrumb-item"><a href="{% url "index" %}">{% trans "Home" %}</a></li>
   <li class="breadcrumb-item"><a href="{% url "emr:patient-list" %}">{% trans "Patients" %}</a></li>
