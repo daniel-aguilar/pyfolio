@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-18 20:06+0000\n"
+"POT-Creation-Date: 2017-11-23 03:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,7 +37,7 @@ msgstr "Femenino"
 msgid "Not Applicable"
 msgstr "No Aplica"
 
-#: emr/models.py:28 emr/templates/emr/patients/list.html:29
+#: emr/models.py:28 emr/templates/emr/patients/list.html:25
 #: emr/templates/emr/patients/personal_information_snippet.html:27
 msgid "Identification"
 msgstr "Cédula de Identidad"
@@ -51,12 +51,12 @@ msgstr "Fecha de Ingreso"
 msgid "Profile Picture"
 msgstr "Foto de Perfil"
 
-#: emr/models.py:38 emr/templates/emr/patients/list.html:30
+#: emr/models.py:38 emr/templates/emr/patients/list.html:26
 #: emr/templates/emr/patients/personal_information_snippet.html:32
 msgid "First Name"
 msgstr "Nombre"
 
-#: emr/models.py:39 emr/templates/emr/patients/list.html:31
+#: emr/models.py:39 emr/templates/emr/patients/list.html:27
 #: emr/templates/emr/patients/personal_information_snippet.html:37
 msgid "Last Name"
 msgstr "Apellido"
@@ -92,11 +92,11 @@ msgstr "Paciente"
 
 #: emr/models.py:48 emr/templates/emr/medical_records/create_form.html:7
 #: emr/templates/emr/medical_records/update_form.html:9
-#: emr/templates/emr/patients/create_form.html:8
+#: emr/templates/emr/patients/create_form.html:11
 #: emr/templates/emr/patients/detail.html:11
-#: emr/templates/emr/patients/list.html:16
-#: emr/templates/emr/patients/list.html:21
-#: emr/templates/emr/patients/update_form.html:8
+#: emr/templates/emr/patients/list.html:12
+#: emr/templates/emr/patients/list.html:17
+#: emr/templates/emr/patients/update_form.html:11
 msgid "Patients"
 msgstr "Pacientes"
 
@@ -143,10 +143,10 @@ msgstr "Expediente Médico de %(patient_full_name)s"
 
 #: emr/templates/emr/medical_records/create_form.html:6
 #: emr/templates/emr/medical_records/update_form.html:8
-#: emr/templates/emr/patients/create_form.html:7
+#: emr/templates/emr/patients/create_form.html:10
 #: emr/templates/emr/patients/detail.html:10
-#: emr/templates/emr/patients/list.html:15
-#: emr/templates/emr/patients/update_form.html:7
+#: emr/templates/emr/patients/list.html:11
+#: emr/templates/emr/patients/update_form.html:10
 msgid "Home"
 msgstr "Inicio"
 
@@ -157,16 +157,16 @@ msgstr "Crear Expediente Médico"
 
 #: emr/templates/emr/medical_records/create_form.html:16
 #: emr/templates/emr/medical_records/update_form.html:18
-#: emr/templates/emr/patients/create_form.html:16
-#: emr/templates/emr/patients/update_form.html:17
+#: emr/templates/emr/patients/create_form.html:19
+#: emr/templates/emr/patients/update_form.html:20
 msgid "Submit"
 msgstr "Guardar"
 
 #: emr/templates/emr/medical_records/create_form.html:17
 #: emr/templates/emr/medical_records/update_form.html:19
 #: emr/templates/emr/patients/confirm_delete.html:8
-#: emr/templates/emr/patients/create_form.html:17
-#: emr/templates/emr/patients/update_form.html:18
+#: emr/templates/emr/patients/create_form.html:20
+#: emr/templates/emr/patients/update_form.html:21
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -188,12 +188,12 @@ msgstr "¿Está seguro(a) que desea remover a \"%(object)s\"?"
 msgid "Remove"
 msgstr "Remover"
 
-#: emr/templates/emr/patients/create_form.html:9
-#: emr/templates/emr/patients/list.html:23
+#: emr/templates/emr/patients/create_form.html:12
+#: emr/templates/emr/patients/list.html:19
 msgid "Add Patient"
 msgstr "Ingresar Paciente"
 
-#: emr/templates/emr/patients/list.html:32
+#: emr/templates/emr/patients/list.html:28
 msgid "Options"
 msgstr "Opciones"
 
@@ -202,7 +202,7 @@ msgid "Personal Information"
 msgstr "Información Personal"
 
 #: emr/templates/emr/patients/personal_information_snippet.html:13
-#: emr/templates/emr/patients/update_form.html:10
+#: emr/templates/emr/patients/update_form.html:13
 msgid "Update Personal Information"
 msgstr "Actualizar Información Personal"
 
