@@ -1,8 +1,11 @@
 from datetime import date
 
 from django.contrib.auth.models import User
+from django.core.exceptions import ValidationError
 from django.test import TestCase
 from django.urls import reverse
+from freezegun import freeze_time
+from model_mommy import mommy
 
 from .models import Patient
 
@@ -13,7 +16,33 @@ USERNAME = 'Morty'
 USER_PASSWORD = 'password'
 
 
-class PatientListApiTests(TestCase):
+@freeze_time("2017-11-25")
+class PatientTestCase(TestCase):
+
+    def test_calculate_age(self):
+        patient = mommy.make(
+            Patient,
+            date_of_birth=date(1994, 3, 16)
+        )
+        self.assertEqual(patient.age(), 23)
+
+    def test_invalid_date_of_birth(self):
+        patient = mommy.make(
+            Patient,
+            date_of_birth=date(2017, 11, 26)
+        )
+
+        with self.assertRaises(ValidationError) as cm:
+            patient.full_clean(validate_unique=False)
+
+        the_exception = cm.exception
+        self.assertDictEqual(
+            the_exception.message_dict,
+            {'date_of_birth': ['Invalid date of birth.']}
+        )
+
+
+class PatientListApiTestCase(TestCase):
     user = None
 
     def setUp(self):

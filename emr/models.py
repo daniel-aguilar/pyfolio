@@ -1,7 +1,8 @@
-from datetime import datetime
+from datetime import date
 from uuid import uuid4
 
 from dateutil.relativedelta import relativedelta
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
@@ -59,13 +60,17 @@ class Patient(models.Model):
         return dict(self.SEX_CHOICES)[self.sex]
 
     def age(self):
-        return relativedelta(datetime.now(), self.date_of_birth).years
+        return relativedelta(date.today(), self.date_of_birth).years
 
     def has_medical_record(self):
         return hasattr(self, 'medical_record')
 
     def has_profile_picture(self):
         return bool(self.profile_picture)
+
+    def clean(self):
+        if self.date_of_birth > date.today():
+            raise ValidationError({'date_of_birth': _('Invalid date of birth.')})
 
 
 class MedicalRecord(models.Model):
