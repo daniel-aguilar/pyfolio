@@ -12,7 +12,7 @@ from .models import Patient
 # Create your tests here.
 
 
-USERNAME = 'Morty'
+USERNAME = 'morty'
 USER_PASSWORD = 'password'
 
 
@@ -44,38 +44,30 @@ class PatientTestCase(TestCase):
 
 class PatientListApiTestCase(TestCase):
     user = None
+    patients = None
 
     def setUp(self):
         self.user = User.objects.create_user(USERNAME, password=USER_PASSWORD)
         self.client.login(username=USERNAME, password=USER_PASSWORD)
 
-    def test_list_patients(self):
-        patients = [
-            Patient(
+        self.patients = [
+            mommy.make(
+                Patient,
+                id=1,
                 identification='583930209',
                 first_name='Marshall',
-                last_name='Kane',
-                sex=1,
-                date_of_birth=date(2007, 7, 22),
-                occupation='Student',
-                phone_number='14864677',
-                address='9920 Lacinia Rd.'
+                last_name='Kane'
             ),
-            Patient(
+            mommy.make(
+                Patient,
+                id=2,
                 identification='614230563',
                 first_name='Stacey',
-                last_name='Burch',
-                sex=2,
-                date_of_birth=date(1998, 4, 25),
-                occupation='Clerk',
-                phone_number='94599126',
-                address='Ap #192-5005 Convallis Avenue'
+                last_name='Burch'
             ),
         ]
 
-        for patient in patients:
-            patient.save()
-
+    def test_list_patients(self):
         expected_json = {
             'data': [
                 {
