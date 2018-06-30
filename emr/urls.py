@@ -1,7 +1,6 @@
 from django.conf.urls import url
 
-from .views import (DataTablesLanguageFile, MedicalRecordCreate,
-                    MedicalRecordUpdate, PatientCreate, PatientDelete,
+from .views import (DataTablesLanguageFile, MedicalRecordCreate, MedicalRecordUpdate, PatientCreate, PatientDelete,
                     PatientDetail, PatientList, PatientListApi, PatientUpdate)
 
 app_name = 'emr'

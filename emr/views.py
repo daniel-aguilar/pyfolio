@@ -7,8 +7,7 @@ from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse, reverse_lazy
 from django.utils.translation import ugettext_lazy as _
-from django.views.generic import (CreateView, DeleteView, DetailView,
-                                  TemplateView, UpdateView, View)
+from django.views.generic import CreateView, DeleteView, DetailView, TemplateView, UpdateView, View
 from pkg_resources import resource_stream
 
 from .forms import MedicalRecordForm
