@@ -1,1 +1,1 @@
-web: gunicorn pyfolio.wsgi --log-file -
+web: gunicorn pyfolio.wsgi
