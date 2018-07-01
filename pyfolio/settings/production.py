@@ -118,11 +118,7 @@ LOGGING = {
         }
     },
     'loggers': {
-        'core': {
-            'handlers': ['console', 'file'],
-            'level': 'DEBUG',
-        },
-        'emr': {
+        'pyfolio': {
             'handlers': ['console', 'file'],
             'level': 'DEBUG',
         },
