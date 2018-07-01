@@ -5,7 +5,7 @@
 .. image:: https://travis-ci.com/daniel-aguilar/pyfolio.svg?branch=master
    :target: https://travis-ci.com/daniel-aguilar/pyfolio
 
-Folio is a Electronic Medical Record (EMR) tailored for a relative of mine.
+Folio is an Electronic Medical Record (EMR) tailored for a relative of mine.
 
 pyfolio is the current implementation of Folio, which was previously written in
 PHP (Yii 2).
