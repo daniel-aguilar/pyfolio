@@ -2,8 +2,8 @@
  pyfolio
 =========
 
-.. image:: https://travis-ci.com/daniel-aguilar/pyfolio.svg?branch=master
-   :target: https://travis-ci.com/daniel-aguilar/pyfolio
+.. image:: https://github.com/daniel-aguilar/pyfolio/workflows/build/badge.svg
+   :target: https://github.com/daniel-aguilar/pyfolio/actions
 
 Folio is an Electronic Medical Record (EMR) tailored for a relative of mine.
 
