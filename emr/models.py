@@ -27,7 +27,7 @@ class Patient(models.Model):
 
     identification = models.CharField(
         _('Identification'),
-        max_length=9,
+        max_length=20,
         unique=True
     )
     date_added = models.DateTimeField(_('Date Added'), auto_now_add=True)
