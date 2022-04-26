@@ -133,7 +133,7 @@ DEFAULT_FILE_STORAGE = 'django_s3_storage.storage.S3Storage'
 AWS_REGION = 'us-east-1'
 AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
-AWS_S3_BUCKET_NAME = 'pyfolio'
+AWS_S3_BUCKET_NAME = 'folio-cr'
 AWS_S3_FILE_OVERWRITE = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
