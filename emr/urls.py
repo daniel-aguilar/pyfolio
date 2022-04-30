@@ -1,4 +1,4 @@
-from django.conf.urls import re_path as url
+from django.urls import path
 
 from .views import (DataTablesLanguageFile, MedicalRecordCreate, MedicalRecordUpdate, PatientCreate, PatientDelete,
                     PatientDetail, PatientList, PatientListApi, PatientUpdate)
@@ -6,17 +6,17 @@ from .views import (DataTablesLanguageFile, MedicalRecordCreate, MedicalRecordUp
 app_name = 'emr'
 urlpatterns = [
     # API
-    url(r'^api/patients/$', PatientListApi.as_view(), name='api-patient-list'),
-    url(r'^api/datatables/language/$', DataTablesLanguageFile.as_view(), name='api-datatables-language'),
+    path('api/patients/', PatientListApi.as_view(), name='api-patient-list'),
+    path('api/datatables/language/', DataTablesLanguageFile.as_view(), name='api-datatables-language'),
 
     # Patients
-    url(r'^patients/$', PatientList.as_view(), name="patient-list"),
-    url(r'^patients/(?P<pk>\d+)/$', PatientDetail.as_view(), name="patient-detail"),
-    url(r'^patients/create/$', PatientCreate.as_view(), name="patient-create"),
-    url(r'^patients/update/(?P<pk>\d+)/$', PatientUpdate.as_view(), name="patient-update"),
-    url(r'^patients/delete/(?P<pk>\d+)/$', PatientDelete.as_view(), name="patient-delete"),
+    path('patients/', PatientList.as_view(), name="patient-list"),
+    path('patients/<int:pk>/', PatientDetail.as_view(), name="patient-detail"),
+    path('patients/create/', PatientCreate.as_view(), name="patient-create"),
+    path('patients/update/<int:pk>/', PatientUpdate.as_view(), name="patient-update"),
+    path('patients/delete/<int:pk>/', PatientDelete.as_view(), name="patient-delete"),
 
     # Medical Records
-    url(r'^medical-records/create/(?P<patient_pk>\d+)/$', MedicalRecordCreate.as_view(), name='medical-record-create'),
-    url(r'^medical-records/update/(?P<pk>\d+)/$', MedicalRecordUpdate.as_view(), name='medical-record-update'),
+    path('medical-records/create/<int:patient_pk>/', MedicalRecordCreate.as_view(), name='medical-record-create'),
+    path('medical-records/update/<int:pk>/', MedicalRecordUpdate.as_view(), name='medical-record-update'),
 ]
