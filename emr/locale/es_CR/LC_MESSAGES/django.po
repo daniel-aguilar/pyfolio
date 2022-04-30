@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-25 21:14-0600\n"
+"POT-Creation-Date: 2022-04-30 16:17-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -220,24 +220,24 @@ msgstr "Remover Paciente"
 msgid "Age"
 msgstr "Edad"
 
-#: emr/views.py:42
+#: emr/views.py:45
 #, python-format
 msgid "Patient %(patient_full_name)s added"
 msgstr "Paciente %(patient_full_name)s ingresado"
 
-#: emr/views.py:53
+#: emr/views.py:56
 msgid "Personal information updated"
 msgstr "Información personal actualizada"
 
-#: emr/views.py:64
+#: emr/views.py:67
 #, python-format
 msgid "Patient %(patient_full_name)s removed"
 msgstr "Paciente %(patient_full_name)s removido(a)"
 
-#: emr/views.py:77
+#: emr/views.py:80
 msgid "Medical record created"
 msgstr "Expediente médico creado"
 
-#: emr/views.py:111
+#: emr/views.py:114
 msgid "Medical record updated"
 msgstr "Expediente médico actualizado"
