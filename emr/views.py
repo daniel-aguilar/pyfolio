@@ -6,9 +6,12 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse, reverse_lazy
+from django.utils.translation import get_language
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import CreateView, DeleteView, DetailView, TemplateView, UpdateView, View
 from pkg_resources import resource_stream
+
+from pyfolio.settings.production import LANGUAGE_CODE
 
 from .forms import MedicalRecordForm
 from .models import MedicalRecord, Patient
@@ -119,5 +122,9 @@ class MedicalRecordUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
 class DataTablesLanguageFile(LoginRequiredMixin, View):
 
     def get(self, request, *args, **kwargs):
-        with resource_stream('emr.resources.datatables', 'spanish.json') as language_file:
-            return JsonResponse(json.load(language_file))
+        # HACK: Small patch to localize DataTables
+        if get_language() == LANGUAGE_CODE.split('-')[0]:
+            with resource_stream('emr.resources.datatables', 'spanish.json') as language_file:
+                return JsonResponse(json.load(language_file))
+        else:
+            return JsonResponse(None, safe=False)
