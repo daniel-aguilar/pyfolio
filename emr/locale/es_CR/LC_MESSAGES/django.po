@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-30 16:17-0600\n"
+"POT-Creation-Date: 2022-04-30 19:31-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -106,43 +106,43 @@ msgstr "Pacientes"
 msgid "Invalid date of birth."
 msgstr "Fecha de Nacimiento"
 
-#: emr/models.py:83 emr/templates/emr/medical_records/detail_snippet.html:23
+#: emr/models.py:83 emr/templates/emr/medical_records/detail_snippet.html:27
 msgid "Current Condition"
 msgstr "Padecimiento Actual (PA)"
 
-#: emr/models.py:84 emr/templates/emr/medical_records/detail_snippet.html:27
+#: emr/models.py:84 emr/templates/emr/medical_records/detail_snippet.html:31
 msgid "Current Treatment"
 msgstr "Tratamiento Actual (Tx. A)"
 
-#: emr/models.py:85 emr/templates/emr/medical_records/detail_snippet.html:31
+#: emr/models.py:85 emr/templates/emr/medical_records/detail_snippet.html:35
 msgid "Reference"
 msgstr "Referencia"
 
-#: emr/models.py:86 emr/templates/emr/medical_records/detail_snippet.html:35
+#: emr/models.py:86 emr/templates/emr/medical_records/detail_snippet.html:39
 msgid "Physical Exploration"
 msgstr "Exploración Física (Ex)"
 
-#: emr/models.py:87 emr/templates/emr/medical_records/detail_snippet.html:39
+#: emr/models.py:87 emr/templates/emr/medical_records/detail_snippet.html:43
 msgid "Diagnosis"
 msgstr "Diagnóstico (Dx)"
 
-#: emr/models.py:88 emr/templates/emr/medical_records/detail_snippet.html:43
+#: emr/models.py:88 emr/templates/emr/medical_records/detail_snippet.html:47
 msgid "Treatment to Follow"
 msgstr "Tratamiento a Seguir (TF)"
 
-#: emr/models.py:89 emr/templates/emr/medical_records/detail_snippet.html:47
+#: emr/models.py:89 emr/templates/emr/medical_records/detail_snippet.html:51
 msgid "Additional Notes"
 msgstr "Notas Adicionales"
 
-#: emr/models.py:93 emr/templates/emr/medical_records/detail_snippet.html:6
+#: emr/models.py:94 emr/templates/emr/medical_records/detail_snippet.html:6
 msgid "Medical Record"
 msgstr "Expediente Médico"
 
-#: emr/models.py:94
+#: emr/models.py:95
 msgid "Medical Records"
 msgstr "Expedientes Médicos"
 
-#: emr/models.py:97
+#: emr/models.py:98
 #, python-format
 msgid "%(patient_full_name)s's Medical Record"
 msgstr "Expediente Médico de %(patient_full_name)s"
@@ -157,7 +157,7 @@ msgid "Home"
 msgstr "Inicio"
 
 #: emr/templates/emr/medical_records/create_form.html:9
-#: emr/templates/emr/medical_records/detail_snippet.html:56
+#: emr/templates/emr/medical_records/detail_snippet.html:60
 msgid "Create Medical Record"
 msgstr "Crear Expediente Médico"
 
@@ -181,7 +181,11 @@ msgstr "Cancelar"
 msgid "Update Medical Record"
 msgstr "Actualizar Expediente Médico"
 
-#: emr/templates/emr/medical_records/detail_snippet.html:59
+#: emr/templates/emr/medical_records/detail_snippet.html:23
+msgid "Last Modified"
+msgstr "Última Actualización"
+
+#: emr/templates/emr/medical_records/detail_snippet.html:63
 msgid "This patient doesn't have a medical record yet."
 msgstr "Este paciente aún no tiene un expediente médico."
 

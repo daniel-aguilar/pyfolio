@@ -87,6 +87,7 @@ class MedicalRecord(models.Model):
     diagnosis = models.TextField(_('Diagnosis'))
     treatment_to_follow = models.TextField(_('Treatment to Follow'))
     additional_notes = models.TextField(_('Additional Notes'), blank=True)
+    last_modified = models.DateTimeField(auto_now=True, editable=False)
 
     class Meta:
         db_table = 'emr_medical_record'

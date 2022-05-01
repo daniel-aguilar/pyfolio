@@ -20,6 +20,10 @@
       <li class="list-group-item">
         <table class="table table-striped">
           <tr>
+            <th>{% trans "Last Modified" %}</th>
+            <td>{{ medical_record.last_modified|date:"j/n/Y P" }}</td>
+          </tr>
+          <tr>
             <th>{% trans "Current Condition" %}</th>
             <td>{{ medical_record.current_condition }}</td>
           </tr>
