@@ -1,0 +1,10 @@
+.gcloudignore
+
+.git
+.gitignore
+
+/setup.cfg
+
+#!include:.gitignore
+!staticfiles/
+!*.mo

@@ -161,3 +161,5 @@ cython_debug/
 
 staticfiles/
 media/
+
+env_variables.yaml

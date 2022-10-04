@@ -1,0 +1,11 @@
+service: folio
+runtime: python310
+
+includes:
+  - env_variables.yaml
+
+handlers:
+- url: /static
+  static_dir: staticfiles/
+- url: /.*
+  script: auto
