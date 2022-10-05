@@ -1,6 +1,6 @@
 asgiref==3.5.2
-boto3==1.24.84
-botocore==1.27.84
+boto3==1.24.86
+botocore==1.27.86
 coverage==6.5.0
 dj-database-url==1.0.0
 Django==3.2.16
