@@ -1,7 +1,7 @@
 asgiref==3.6.0
-boto3==1.26.63
-botocore==1.29.63
-coverage==7.1.0
+boto3==1.26.82
+botocore==1.29.82
+coverage==7.2.1
 dj-database-url==1.2.0
 Django==3.2.18
 django-bootstrap3==22.2
@@ -19,7 +19,7 @@ psycopg2-binary==2.9.5
 pycodestyle==2.10.0
 pyflakes==3.0.1
 python-dateutil==2.8.2
-python-dotenv==0.21.1
+python-dotenv==1.0.0
 pytz==2022.7.1
 s3transfer==0.6.0
 six==1.16.0
@@ -27,4 +27,4 @@ sqlparse==0.4.3
 typing_extensions==4.1.1
 tzdata==2022.4
 urllib3==1.26.14
-whitenoise==6.3.0
+whitenoise==6.4.0
