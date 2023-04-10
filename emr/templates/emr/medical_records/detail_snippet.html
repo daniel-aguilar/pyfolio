@@ -1,13 +1,16 @@
 {% load i18n %}
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h1 class="panel-title">
-      <a data-toggle="collapse" data-parent="#accordion" href="#medical-record">{% trans "Medical Record" %}</a>
+<div class="card">
+  <div class="card-header">
+    <h1 class="mb-0">
+      <a class="btn btn-link btn-block text-left" data-toggle="collapse"
+          href="#medical-record">
+        {% trans "Medical Record" %}
+      </a>
     </h1>
   </div>
 
-  <div id="medical-record" class="panel-collapse collapse in">
+  <div id="medical-record" class="collapse show" data-parent="#detail-accordion">
     <ul class="list-group">
 
       {% if patient.has_medical_record %}

@@ -1,25 +1,28 @@
 {% load i18n %}
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h1 class="panel-title">
-      <a data-toggle="collapse" data-parent="#accordion" href="#personal-information">{% trans "Personal Information" %}</a>
+<div class="card">
+  <div class="card-header">
+    <h1 class="mb-0">
+      <a class="btn btn-link btn-block text-left" data-toggle="collapse"
+          href="#personal-information">
+        {% trans "Personal Information" %}
+      </a>
     </h1>
   </div>
 
-  <div id="personal-information" class="collapse">
+  <div id="personal-information" class="collapse" data-parent="#detail-accordion">
     <ul class="list-group">
       <li class="list-group-item">
         <a class="btn btn-primary" href="{% url "emr:patient-update" patient.id %}">{% trans "Update Personal Information" %}</a>
         <a class="btn btn-danger" href="{% url "emr:patient-delete" patient.id %}">{% trans "Remove Patient" %}</a>
       </li>
 
-      <li class="list-group-item">
+      <li class="list-group-item table-responsive">
         <table class="table table-striped">
           {% if patient.has_profile_picture %}
           <tr>
             <th>{% trans "Profile Picture" %}</th>
-            <td><img src="{{ patient.profile_picture.url }}" class="img-responsive img-rounded profile-picture"></td>
+            <td><img src="{{ patient.profile_picture.url }}" class="img-fluid rounded profile-picture"></td>
           </tr>
           {% endif %}
 

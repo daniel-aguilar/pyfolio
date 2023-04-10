@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static i18n bootstrap3 %}
+{% load static i18n bootstrap4 %}
 
 {% block head %}
 {{ js_data|json_script:"js-data" }}
@@ -19,7 +19,7 @@
 
 <a class="btn btn-success" href="{% url "emr:patient-create" %}">{% trans "Add Patient" %}</a>
 
-<div id="patient-list-container">
+<div class="pt-3">
   <table class="table table-striped table-hover table-bordered" id="patient-list">
     <thead>
       <tr>

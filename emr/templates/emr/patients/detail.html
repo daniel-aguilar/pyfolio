@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static i18n bootstrap3 %}
+{% load static i18n bootstrap4 %}
 
 {% block head %}
 <link rel="stylesheet" href="{% static "emr/css/patients/detail.css" %}" type="text/css" media="all" />
@@ -16,7 +16,7 @@
 
 <h1>{{ patient.full_name }}</h1>
 
-<div class="panel-group" id="accordion">
+<div class="accordion" id="detail-accordion">
   {% include "emr/patients/personal_information_snippet.html" %}
   {% include "emr/medical_records/detail_snippet.html" %}
 </div>

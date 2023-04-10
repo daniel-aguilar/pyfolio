@@ -7,8 +7,8 @@
 
 {% block content %}
 <div class="jumbotron">
-  <h1>{% trans "Welcome to Folio" %}</h1>
-  <p>{% trans "Medical records, made easy" %}</p>
+  <h1 class="display-4">{% trans "Welcome to Folio" %}</h1>
+  <p class="lead">{% trans "Medical records, made easy" %}</p>
 
   {% if user.is_authenticated %}
   <a class="btn btn-lg btn-success" href="{% url "emr:patient-list" %}">{% trans "View Patients" %}</a>

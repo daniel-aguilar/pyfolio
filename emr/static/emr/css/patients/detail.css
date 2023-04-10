@@ -2,3 +2,10 @@
     max-height: 25em;
     max-width: 25em;
 }
+
+@media (max-width: 767.98px) {
+  /* Add some spacing between the 2 buttons */
+  #personal-information li:nth-child(1) a:nth-child(1) {
+    margin-bottom: 10px;
+  }
+}
