@@ -16,7 +16,7 @@ USERNAME = 'morty'
 USER_PASSWORD = 'password'
 
 
-@freeze_time("2017-11-25")
+@freeze_time('2017-11-25')
 class PatientTestCase(TestCase):
 
     def test_calculate_age(self):
