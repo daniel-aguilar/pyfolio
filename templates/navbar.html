@@ -1,7 +1,4 @@
-{% load i18n nav %}
-
-{% trans "Sign Out" as sign_out %}
-{% trans "Sign In" as sign_in %}
+{% load i18n %}
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
@@ -18,10 +15,20 @@
       <ul class="nav navbar-nav navbar-right">
 
         {% if user.is_authenticated %}
-          <li><p class="navbar-text">{% blocktrans with user_name=user.get_full_name %}Hello, {{ user_name }}{% endblocktrans %}</p></li>
-          {% navlink "logout" sign_out %}
+          <li class="nav-item">
+            <span class="navbar-text">
+              {% blocktrans trimmed with user_name=user.get_full_name %}
+                Hello, {{ user_name }}
+              {% endblocktrans %}
+            </span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">{% trans "Sign Out" %}</a>
+          </li>
         {% else %}
-          {% navlink "login" sign_in %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">{% trans "Sign In" %}</a>
+          </li>
         {% endif %}
 
       </ul>

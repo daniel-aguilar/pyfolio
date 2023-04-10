@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'emr',
-    'navigation',
     'bootstrap3',
     'django_extensions',
     'django_s3_storage',
