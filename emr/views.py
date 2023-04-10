@@ -8,6 +8,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse, reverse_lazy
 from django.utils.translation import get_language
 from django.utils.translation import gettext_lazy as _
+from django.utils.translation import pgettext
 from django.views.generic import CreateView, DeleteView, DetailView, TemplateView, UpdateView, View
 from pkg_resources import resource_stream
 
@@ -21,6 +22,24 @@ from .models import MedicalRecord, Patient
 
 class PatientList(LoginRequiredMixin, TemplateView):
     template_name = 'emr/patients/list.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['js_data'] = {
+            'urls': {
+                'datatablesLanguage': reverse('emr:api-datatables-language'),
+                'patientList': reverse('emr:api-patient-list'),
+                'viewPatient': reverse('emr:patient-detail'),
+                'updatePatient': reverse('emr:patient-update'),
+                'deletePatient': reverse('emr:patient-delete'),
+            },
+            'lang': {
+                'view': pgettext('verb', 'View'),
+                'edit': _('Edit'),
+                'delete': _('Delete'),
+            },
+        }
+        return context
 
 
 class PatientListApi(LoginRequiredMixin, View):

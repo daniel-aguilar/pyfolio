@@ -224,7 +224,19 @@ msgstr "Remover Paciente"
 msgid "Age"
 msgstr "Edad"
 
-#: emr/views.py:45
+#: emr/views.py:37
+msgctxt "verb"
+msgid "View"
+msgstr "Ver"
+
+#: emr/views.py:38
+msgid "Edit"
+msgstr "Editar"
+
+#: emr/views.py:39
+msgid "Delete"
+msgstr "Eliminar"
+
 #, python-format
 msgid "Patient %(patient_full_name)s added"
 msgstr "Paciente %(patient_full_name)s ingresado"

@@ -1,3 +1,9 @@
-#patient-list-container {
-    padding-top: 15px
+@media (min-width: 768px) {
+  .options-md { display: block; }
+  .options-sm { display: none; }
+}
+
+@media (max-width: 767.98px) {
+  .options-md { display: none; }
+  .options-sm { display: block; }
 }

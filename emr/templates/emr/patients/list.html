@@ -2,7 +2,8 @@
 {% load static i18n bootstrap3 %}
 
 {% block head %}
-<script src="{% static "emr/js/patients/list.js" %}" charset="utf-8"></script>
+{{ js_data|json_script:"js-data" }}
+<script src="{% static "emr/js/patients/list.js" %}" defer></script>
 <link rel="stylesheet" href="{% static "emr/css/patients/list.css" %}">
 {% endblock %}
 
@@ -19,7 +20,7 @@
 <a class="btn btn-success" href="{% url "emr:patient-create" %}">{% trans "Add Patient" %}</a>
 
 <div id="patient-list-container">
-  <table class="table" id="patient-list">
+  <table class="table table-striped table-hover table-bordered" id="patient-list">
     <thead>
       <tr>
         <th>{% trans "Identification" %}</th>
