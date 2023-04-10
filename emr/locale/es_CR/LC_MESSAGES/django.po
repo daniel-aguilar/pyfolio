@@ -100,11 +100,9 @@ msgstr "Paciente"
 msgid "Patients"
 msgstr "Pacientes"
 
-#: emr/models.py:73
-#, fuzzy
-#| msgid "Date of Birth"
+#: emr/models.py:73 emr/tests.py:42
 msgid "Invalid date of birth."
-msgstr "Fecha de Nacimiento"
+msgstr "Fecha de nacimiento no válida."
 
 #: emr/models.py:83 emr/templates/emr/medical_records/detail_snippet.html:27
 msgid "Current Condition"

@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.test import TestCase
 from django.urls import reverse
+from django.utils.translation import gettext_lazy as _
 from freezegun import freeze_time
 from model_mommy import mommy
 
@@ -38,7 +39,7 @@ class PatientTestCase(TestCase):
         the_exception = cm.exception
         self.assertDictEqual(
             the_exception.message_dict,
-            {'date_of_birth': ['Invalid date of birth.']}
+            {'date_of_birth': [_('Invalid date of birth.')]}
         )
 
 
