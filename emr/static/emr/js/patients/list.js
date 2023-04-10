@@ -24,22 +24,22 @@ new DataTable('#patient-list', {
             `<div class="options-md">
               <a class="btn btn-outline-dark" href="${viewURL}"
                 title="${data.lang.view}">
-                View
+                <span class="fa-solid fa-eye"</span>
               </a>
               <a class="btn btn-outline-dark" href="${updateURL}"
                   title="${data.lang.edit}">
-                Edit
+                <span class="fa-solid fa-pencil"</span>
               </a>
               <a class="btn btn-outline-dark" href="${deleteURL}"
                   title="${data.lang.delete}">
-                Delete
+                <span class="fa-solid fa-trash-can"</span>
               </a>
             </div>
 
             <div class="dropdown options-sm">
               <button class="btn btn-secondary dropdown-toggle" type="button"
                   data-toggle="dropdown">
-                Dropdown
+                <span class="fa-solid fa-bars"></span>
               </button>
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="${viewURL}">
