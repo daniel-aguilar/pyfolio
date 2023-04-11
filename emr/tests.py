@@ -1,5 +1,6 @@
 from datetime import date
 
+from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.test import TestCase
@@ -107,6 +108,7 @@ class PatientListApiTestCase(TestCase):
             'previous',
         ]
 
+        self.client.cookies.load({settings.LANGUAGE_COOKIE_NAME: 'es'})
         response = self.client.get(reverse('emr:api-datatables-language'))
         response_json = response.json()
 
