@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-10 21:59+0000\n"
-"PO-Revision-Date: 2023-04-10 15:02-0600\n"
+"POT-Creation-Date: 2023-04-11 00:37+0000\n"
+"PO-Revision-Date: 2023-04-10 18:36-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_CR\n"
@@ -18,8 +18,8 @@ msgstr ""
 "X-Generator: Poedit 3.2.2\n"
 
 #: emr/apps.py:7
-msgid "EMR"
-msgstr "Expediente Médico Digital"
+msgid "Electronic Medical Record"
+msgstr "Expediente Médico Electrónico"
 
 #: emr/models.py:22
 msgid "Not Known"
@@ -190,11 +190,11 @@ msgstr "Este paciente aún no tiene un expediente médico."
 #: emr/templates/emr/patients/confirm_delete.html:7
 #, python-format
 msgid "Are you sure you want to remove \"%(object)s\"?"
-msgstr "¿Está seguro(a) que desea remover a \"%(object)s\"?"
+msgstr "¿Está seguro(a) que desea eliminar a \"%(object)s\"?"
 
-#: emr/templates/emr/patients/confirm_delete.html:9
+#: emr/templates/emr/patients/confirm_delete.html:9 emr/views.py:39
 msgid "Remove"
-msgstr "Remover"
+msgstr "Eliminar"
 
 #: emr/templates/emr/patients/create_form.html:12
 #: emr/templates/emr/patients/list.html:22
@@ -216,7 +216,7 @@ msgstr "Actualizar Información Personal"
 
 #: emr/templates/emr/patients/personal_information_snippet.html:17
 msgid "Remove Patient"
-msgstr "Remover Paciente"
+msgstr "Eliminar Paciente"
 
 #: emr/templates/emr/patients/personal_information_snippet.html:55
 msgid "Age"
@@ -230,10 +230,6 @@ msgstr "Ver"
 #: emr/views.py:38
 msgid "Edit"
 msgstr "Editar"
-
-#: emr/views.py:39
-msgid "Delete"
-msgstr "Eliminar"
 
 #: emr/views.py:64
 #, python-format

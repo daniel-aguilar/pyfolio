@@ -36,7 +36,7 @@ class PatientList(LoginRequiredMixin, TemplateView):
             'lang': {
                 'view': pgettext('verb', 'View'),
                 'edit': _('Edit'),
-                'delete': _('Delete'),
+                'delete': _('Remove'),
             },
         }
         return context
