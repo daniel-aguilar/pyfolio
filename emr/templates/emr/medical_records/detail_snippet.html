@@ -5,7 +5,7 @@
     <h1 class="mb-0">
       <a class="btn btn-link btn-block text-left" data-toggle="collapse"
           href="#medical-record">
-        {% trans "Medical Record" %}
+        {% translate "Medical Record" %}
       </a>
     </h1>
   </div>
@@ -17,41 +17,41 @@
       {% with medical_record=patient.medical_record %}
 
       <li class="list-group-item">
-        <a class="btn btn-primary" href="{% url "emr:medical-record-update" medical_record.id %}">{% trans "Update Medical Record" %}</a>
+        <a class="btn btn-primary" href="{% url "emr:medical-record-update" medical_record.id %}">{% translate "Update Medical Record" %}</a>
       </li>
 
       <li class="list-group-item">
         <table class="table table-striped">
           <tr>
-            <th>{% trans "Last Modified" %}</th>
+            <th>{% translate "Last Modified" %}</th>
             <td>{{ medical_record.last_modified|date:"j/n/Y P" }}</td>
           </tr>
           <tr>
-            <th>{% trans "Current Condition" %}</th>
+            <th>{% translate "Current Condition" %}</th>
             <td>{{ medical_record.current_condition }}</td>
           </tr>
           <tr>
-            <th>{% trans "Current Treatment" %}</th>
+            <th>{% translate "Current Treatment" %}</th>
             <td>{{ medical_record.current_treatment }}</td>
           </tr>
           <tr>
-            <th>{% trans "Reference" %}</th>
+            <th>{% translate "Reference" %}</th>
             <td>{{ medical_record.reference }}</td>
           </tr>
           <tr>
-            <th>{% trans "Physical Exploration" %}</th>
+            <th>{% translate "Physical Exploration" %}</th>
             <td>{{ medical_record.physical_exploration }}</td>
           </tr>
           <tr>
-            <th>{% trans "Diagnosis" %}</th>
+            <th>{% translate "Diagnosis" %}</th>
             <td>{{ medical_record.diagnosis }}</td>
           </tr>
           <tr>
-            <th>{% trans "Treatment to Follow" %}</th>
+            <th>{% translate "Treatment to Follow" %}</th>
             <td>{{ medical_record.treatment_to_follow }}</td>
           </tr>
           <tr>
-            <th>{% trans "Additional Notes" %}</th>
+            <th>{% translate "Additional Notes" %}</th>
             <td>{{ medical_record.additional_notes }}</td>
           </tr>
         </table>
@@ -60,10 +60,10 @@
 
       {% else %}
       <li class="list-group-item">
-        <a class="btn btn-success" href="{% url "emr:medical-record-create" patient.id %}">{% trans "Create Medical Record" %}</a>
+        <a class="btn btn-success" href="{% url "emr:medical-record-create" patient.id %}">{% translate "Create Medical Record" %}</a>
       </li>
       <li class="list-group-item">
-        {% trans "This patient doesn't have a medical record yet." %}
+        {% translate "This patient doesn't have a medical record yet." %}
       </li>
       {% endif %}
 

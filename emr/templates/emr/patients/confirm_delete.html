@@ -4,8 +4,8 @@
 {% block content %}
 <form action="" method="post">
   {% csrf_token %}
-  <p>{% blocktrans %}Are you sure you want to remove "{{ object }}"?{% endblocktrans %}</p>
-  <a class="btn btn-primary" href="{% url "emr:patient-detail" object.id %}">{% trans "Cancel" %}</a>
-  <input class="btn btn-danger" type="submit" value="{% trans "Remove" %}">
+  <p>{% blocktranslate %}Are you sure you want to remove "{{ object }}"?{% endblocktranslate %}</p>
+  <a class="btn btn-primary" href="{% url "emr:patient-detail" object.id %}">{% translate "Cancel" %}</a>
+  <input class="btn btn-danger" type="submit" value="{% translate "Remove" %}">
 </form>
 {% endblock %}

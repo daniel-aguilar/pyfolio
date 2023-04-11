@@ -11,24 +11,24 @@
 
 {% block content %}
 <ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="{% url "index" %}">{% trans "Home" %}</a></li>
-  <li class="breadcrumb-item active">{% trans "Patients" %}</li>
+  <li class="breadcrumb-item"><a href="{% url "index" %}">{% translate "Home" %}</a></li>
+  <li class="breadcrumb-item active">{% translate "Patients" %}</li>
 </ol>
 
 {% bootstrap_messages %}
 
-<h1>{% trans "Patients" %}</h1>
+<h1>{% translate "Patients" %}</h1>
 
-<a class="btn btn-success" href="{% url "emr:patient-create" %}">{% trans "Add Patient" %}</a>
+<a class="btn btn-success" href="{% url "emr:patient-create" %}">{% translate "Add Patient" %}</a>
 
 <div class="pt-3">
   <table class="table table-striped table-hover table-bordered" id="patient-list">
     <thead>
       <tr>
-        <th>{% trans "Identification" %}</th>
-        <th>{% trans "First Name" %}</th>
-        <th>{% trans "Last Name" %}</th>
-        <th>{% trans "Options" %}</th>
+        <th>{% translate "Identification" %}</th>
+        <th>{% translate "First Name" %}</th>
+        <th>{% translate "Last Name" %}</th>
+        <th>{% translate "Options" %}</th>
       </tr>
     </thead>
   </table>

@@ -7,8 +7,8 @@
 
 {% block content %}
 <ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="{% url "index" %}">{% trans "Home" %}</a></li>
-  <li class="breadcrumb-item"><a href="{% url "emr:patient-list" %}">{% trans "Patients" %}</a></li>
+  <li class="breadcrumb-item"><a href="{% url "index" %}">{% translate "Home" %}</a></li>
+  <li class="breadcrumb-item"><a href="{% url "emr:patient-list" %}">{% translate "Patients" %}</a></li>
   <li class="breadcrumb-item active">{{ patient.full_name }}</li>
 </ol>
 

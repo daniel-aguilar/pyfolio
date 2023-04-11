@@ -5,7 +5,7 @@
     <h1 class="mb-0">
       <a class="btn btn-link btn-block text-left" data-toggle="collapse"
           href="#personal-information">
-        {% trans "Personal Information" %}
+        {% translate "Personal Information" %}
       </a>
     </h1>
   </div>
@@ -13,63 +13,63 @@
   <div id="personal-information" class="collapse" data-parent="#detail-accordion">
     <ul class="list-group">
       <li class="list-group-item">
-        <a class="btn btn-primary" href="{% url "emr:patient-update" patient.id %}">{% trans "Update Personal Information" %}</a>
-        <a class="btn btn-danger" href="{% url "emr:patient-delete" patient.id %}">{% trans "Remove Patient" %}</a>
+        <a class="btn btn-primary" href="{% url "emr:patient-update" patient.id %}">{% translate "Update Personal Information" %}</a>
+        <a class="btn btn-danger" href="{% url "emr:patient-delete" patient.id %}">{% translate "Remove Patient" %}</a>
       </li>
 
       <li class="list-group-item table-responsive">
         <table class="table table-striped">
           {% if patient.has_profile_picture %}
           <tr>
-            <th>{% trans "Profile Picture" %}</th>
+            <th>{% translate "Profile Picture" %}</th>
             <td><img src="{{ patient.profile_picture.url }}" class="img-fluid rounded profile-picture"></td>
           </tr>
           {% endif %}
 
           <tr>
-            <th>{% trans "Identification" %}</th>
+            <th>{% translate "Identification" %}</th>
             <td>{{ patient.identification }}</td>
           </tr>
 
           <tr>
-            <th>{% trans "First Name" %}</th>
+            <th>{% translate "First Name" %}</th>
             <td>{{ patient.first_name }}</td>
           </tr>
 
           <tr>
-            <th>{% trans "Last Name" %}</th>
+            <th>{% translate "Last Name" %}</th>
             <td>{{ patient.last_name }}</td>
           </tr>
 
           <tr>
-            <th>{% trans "Sex" %}</th>
+            <th>{% translate "Sex" %}</th>
             <td>{{ patient.sex_verbose }}</td>
           </tr>
 
           <tr>
-            <th>{% trans "Date of Birth" %}</th>
+            <th>{% translate "Date of Birth" %}</th>
             <td>{{ patient.date_of_birth }}</td>
           </tr>
 
           <tr>
-            <th>{% trans "Age" %}</th>
+            <th>{% translate "Age" %}</th>
             <td>{{ patient.age }}</td>
           </tr>
 
           <tr>
-            <th>{% trans "Occupation" %}</th>
+            <th>{% translate "Occupation" %}</th>
             <td>{{ patient.occupation }}</td>
           </tr>
 
           <tr>
-            <th>{% trans "Phone Number" %}</th>
+            <th>{% translate "Phone Number" %}</th>
             <td>{{ patient.phone_number }}</td>
           </tr>
         </table>
       </li>
 
       <li class="list-group-item">
-        <h2>{% trans "Address" %}</h2>
+        <h2>{% translate "Address" %}</h2>
         <p>{{ patient.address }}</p>
       </li>
     </ul>

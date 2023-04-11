@@ -14,17 +14,17 @@
         {% if user.is_authenticated %}
           <li class="nav-item">
             <span class="navbar-text">
-              {% blocktrans trimmed with user_name=user.get_full_name %}
+              {% blocktranslate trimmed with user_name=user.get_full_name %}
                 Hello, {{ user_name }}
-              {% endblocktrans %}
+              {% endblocktranslate %}
             </span>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'logout' %}">{% trans "Sign Out" %}</a>
+            <a class="nav-link" href="{% url 'logout' %}">{% translate "Sign Out" %}</a>
           </li>
         {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'login' %}">{% trans "Sign In" %}</a>
+            <a class="nav-link" href="{% url 'login' %}">{% translate "Sign In" %}</a>
           </li>
         {% endif %}
 

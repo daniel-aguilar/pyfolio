@@ -2,14 +2,14 @@
 {% load i18n bootstrap4 %}
 
 {% block content %}
-<h1>{% trans "Sign In" %}</h1>
+<h1>{% translate "Sign In" %}</h1>
 
 <form action="{% url "login" %}" method="post" class="form">
   {% csrf_token %}
   {% bootstrap_form form %}
 
   {% buttons %}
-  <button type="submit" class="btn btn-success">{% trans "Sign In" %}</button>
+  <button type="submit" class="btn btn-success">{% translate "Sign In" %}</button>
   {% endbuttons %}
 </form>
 {% endblock %}
