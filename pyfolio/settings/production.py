@@ -141,6 +141,29 @@ SECURE_SSL_REDIRECT = True
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'default',
+        },
+    },
+    'formatters': {
+        'default': {
+            'style': '{',
+            'format': '{asctime} {levelname: <8} [{name}] {message}',
+        }
+    },
+    'loggers': {
+        'emr': {
+            'handlers': ['console'],
+            'level': 'INFO',
+        },
+    },
+}
+
 X_FRAME_OPTIONS = 'DENY'
 SECURE_BROWSER_XSS_FILTER = True
 
