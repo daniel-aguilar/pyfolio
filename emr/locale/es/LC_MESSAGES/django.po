@@ -17,74 +17,74 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.2.2\n"
 
-#: apps.py:7
+#: apps.py:8
 msgid "Electronic Medical Record"
 msgstr "Expediente Médico Electrónico"
 
-#: models.py:22
+#: models.py:24
 msgid "Not Known"
 msgstr "Desconocido"
 
-#: models.py:23
+#: models.py:25
 msgid "Male"
 msgstr "Masculino"
 
-#: models.py:24
+#: models.py:26
 msgid "Female"
 msgstr "Femenino"
 
-#: models.py:25
+#: models.py:27
 msgid "Not Applicable"
 msgstr "No Aplica"
 
-#: models.py:29 templates/emr/patients/list.html:28
+#: models.py:31 templates/emr/patients/list.html:28
 #: templates/emr/patients/personal_information_snippet.html:30
 msgid "Identification"
 msgstr "Cédula de Identidad"
 
-#: models.py:33
+#: models.py:35
 msgid "Date Added"
 msgstr "Fecha de Ingreso"
 
-#: models.py:35 templates/emr/patients/personal_information_snippet.html:24
+#: models.py:37 templates/emr/patients/personal_information_snippet.html:24
 msgid "Profile Picture"
 msgstr "Foto de Perfil"
 
-#: models.py:39 templates/emr/patients/list.html:29
+#: models.py:41 templates/emr/patients/list.html:29
 #: templates/emr/patients/personal_information_snippet.html:35
 msgid "First Name"
 msgstr "Nombre"
 
-#: models.py:40 templates/emr/patients/list.html:30
+#: models.py:42 templates/emr/patients/list.html:30
 #: templates/emr/patients/personal_information_snippet.html:40
 msgid "Last Name"
 msgstr "Apellido"
 
-#: models.py:41 templates/emr/patients/personal_information_snippet.html:45
+#: models.py:43 templates/emr/patients/personal_information_snippet.html:45
 msgid "Sex"
 msgstr "Sexo"
 
-#: models.py:42 templates/emr/patients/personal_information_snippet.html:50
+#: models.py:44 templates/emr/patients/personal_information_snippet.html:50
 msgid "Date of Birth"
 msgstr "Fecha de Nacimiento"
 
-#: models.py:43 templates/emr/patients/personal_information_snippet.html:60
+#: models.py:45 templates/emr/patients/personal_information_snippet.html:60
 msgid "Occupation"
 msgstr "Ocupación"
 
-#: models.py:44 templates/emr/patients/personal_information_snippet.html:65
+#: models.py:46 templates/emr/patients/personal_information_snippet.html:65
 msgid "Phone Number"
 msgstr "Número de Teléfono"
 
-#: models.py:45 templates/emr/patients/personal_information_snippet.html:72
+#: models.py:47 templates/emr/patients/personal_information_snippet.html:72
 msgid "Address"
 msgstr "Dirección"
 
-#: models.py:48
+#: models.py:50
 msgid "Patient"
 msgstr "Paciente"
 
-#: models.py:49 templates/emr/medical_records/create_form.html:7
+#: models.py:51 templates/emr/medical_records/create_form.html:7
 #: templates/emr/medical_records/update_form.html:9
 #: templates/emr/patients/create_form.html:11
 #: templates/emr/patients/detail.html:11 templates/emr/patients/list.html:15
@@ -97,43 +97,43 @@ msgstr "Pacientes"
 msgid "Invalid date of birth."
 msgstr "Fecha de nacimiento no válida."
 
-#: models.py:83 templates/emr/medical_records/detail_snippet.html:30
+#: models.py:85 templates/emr/medical_records/detail_snippet.html:30
 msgid "Current Condition"
 msgstr "Padecimiento Actual (PA)"
 
-#: models.py:84 templates/emr/medical_records/detail_snippet.html:34
+#: models.py:86 templates/emr/medical_records/detail_snippet.html:34
 msgid "Current Treatment"
 msgstr "Tratamiento Actual (Tx. A)"
 
-#: models.py:85 templates/emr/medical_records/detail_snippet.html:38
+#: models.py:87 templates/emr/medical_records/detail_snippet.html:38
 msgid "Reference"
 msgstr "Referencia"
 
-#: models.py:86 templates/emr/medical_records/detail_snippet.html:42
+#: models.py:88 templates/emr/medical_records/detail_snippet.html:42
 msgid "Physical Exploration"
 msgstr "Exploración Física (Ex)"
 
-#: models.py:87 templates/emr/medical_records/detail_snippet.html:46
+#: models.py:89 templates/emr/medical_records/detail_snippet.html:46
 msgid "Diagnosis"
 msgstr "Diagnóstico (Dx)"
 
-#: models.py:88 templates/emr/medical_records/detail_snippet.html:50
+#: models.py:90 templates/emr/medical_records/detail_snippet.html:50
 msgid "Treatment to Follow"
 msgstr "Tratamiento a Seguir (TF)"
 
-#: models.py:89 templates/emr/medical_records/detail_snippet.html:54
+#: models.py:91 templates/emr/medical_records/detail_snippet.html:54
 msgid "Additional Notes"
 msgstr "Notas Adicionales"
 
-#: models.py:94 templates/emr/medical_records/detail_snippet.html:8
+#: models.py:96 templates/emr/medical_records/detail_snippet.html:8
 msgid "Medical Record"
 msgstr "Expediente Médico"
 
-#: models.py:95
+#: models.py:97
 msgid "Medical Records"
 msgstr "Expedientes Médicos"
 
-#: models.py:98
+#: models.py:100
 #, python-format
 msgid "%(patient_full_name)s's Medical Record"
 msgstr "Expediente Médico de %(patient_full_name)s"
@@ -184,7 +184,7 @@ msgstr "Este paciente aún no tiene un expediente médico."
 msgid "Are you sure you want to remove \"%(object)s\"?"
 msgstr "¿Está seguro(a) que desea eliminar a \"%(object)s\"?"
 
-#: templates/emr/patients/confirm_delete.html:9 views.py:40
+#: templates/emr/patients/confirm_delete.html:9 views.py:37
 msgid "Remove"
 msgstr "Eliminar"
 
@@ -214,33 +214,33 @@ msgstr "Eliminar Paciente"
 msgid "Age"
 msgstr "Edad"
 
-#: views.py:38
+#: views.py:35
 msgctxt "verb"
 msgid "View"
 msgstr "Ver"
 
-#: views.py:39
+#: views.py:36
 msgid "Edit"
 msgstr "Editar"
 
-#: views.py:65
+#: views.py:62
 #, python-format
 msgid "Patient %(patient_full_name)s added"
 msgstr "Paciente %(patient_full_name)s ingresado"
 
-#: views.py:76
+#: views.py:73
 msgid "Personal information updated"
 msgstr "Información personal actualizada"
 
-#: views.py:87
+#: views.py:84
 #, python-format
 msgid "Patient %(patient_full_name)s removed"
 msgstr "Paciente %(patient_full_name)s removido(a)"
 
-#: views.py:100
+#: views.py:97
 msgid "Medical record created"
 msgstr "Expediente médico creado"
 
-#: views.py:134
+#: views.py:131
 msgid "Medical record updated"
 msgstr "Expediente médico actualizado"
