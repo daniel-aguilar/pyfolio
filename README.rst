@@ -10,8 +10,8 @@ Folio is an Electronic Medical Record (EMR) tailored for a relative of mine.
 pyfolio is the current implementation of Folio, which was previously written in
 PHP (Yii 2).
 
-Prerequisites
-=============
+Requirements
+============
 
 * Python 3.11
 * Make
@@ -44,4 +44,4 @@ Run the ``test`` target::
     make test
 
 .. _`AWS S3`: https://aws.amazon.com/s3/
-.. _`PostgreSQL connection URI`: https://www.postgresql.org/docs/9.6/static/libpq-connect.html#LIBPQ-CONNSTRING
+.. _`PostgreSQL connection URI`: https://www.postgresql.org/docs/14/libpq-connect.html#LIBPQ-CONNSTRING
