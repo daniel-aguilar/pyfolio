@@ -4,7 +4,7 @@ boto3==1.26.99
 botocore==1.29.99
 coverage==7.2.2
 dj-database-url==1.2.0
-Django==3.2.18
+Django==4.2
 django-bootstrap4==23.1
 django-extensions==3.2.1
 django-s3-storage==0.13.11
@@ -16,7 +16,8 @@ jmespath==1.0.1
 mccabe==0.7.0
 model-mommy==2.0.0
 Pillow==9.4.0
-psycopg2-binary==2.9.5
+psycopg==3.1.8
+psycopg-binary==3.1.8
 pycodestyle==2.10.0
 pyflakes==3.0.1
 python-dateutil==2.8.2
@@ -26,7 +27,7 @@ s3transfer==0.6.0
 six==1.16.0
 soupsieve==2.4
 sqlparse==0.4.3
-typing_extensions==4.1.1
+typing_extensions==4.5.0
 tzdata==2022.4
 urllib3==1.26.15
 whitenoise==6.4.0

@@ -6,6 +6,8 @@ from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+# Create your models here.
+
 
 def patient_profile_picture_path(instance, filename):
     return 'profile_pictures/{0}.jpg'.format(str(uuid4()))

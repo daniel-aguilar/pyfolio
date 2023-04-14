@@ -3,6 +3,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 class EMRConfig(AppConfig):
+    default_auto_field = 'django.db.models.BigAutoField'
     name = 'emr'
     verbose_name = _('Electronic Medical Record')
 
