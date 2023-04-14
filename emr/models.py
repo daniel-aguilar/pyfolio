@@ -8,7 +8,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 def patient_profile_picture_path(instance, filename):
-    return 'profile_pictures/{0}'.format(str(uuid4()))
+    return 'profile_pictures/{0}.jpg'.format(str(uuid4()))
 
 
 class Patient(models.Model):
