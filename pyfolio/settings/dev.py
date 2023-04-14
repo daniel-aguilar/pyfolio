@@ -1,4 +1,5 @@
-from .production import *  # noqa: F401,F403
+# flake8: noqa
+from .production import *
 
 SECRET_KEY = 'pythonista'
 
@@ -12,7 +13,7 @@ LOGGING['handlers']['file'] = {
     'filename': 'application.log',
     'formatter': 'default',
 }
-LOGGING['loggers'] = {  # noqa: F405
+LOGGING['loggers'] = {
     'emr': {
         'handlers': ['console', 'file'],
         'level': 'DEBUG',
@@ -21,7 +22,7 @@ LOGGING['loggers'] = {  # noqa: F405
 
 
 MEDIA_URL = 'media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # noqa: F405
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 
 
