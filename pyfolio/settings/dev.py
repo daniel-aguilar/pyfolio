@@ -20,9 +20,11 @@ LOGGING['loggers'] = {  # noqa: F405
 }
 
 
+MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # noqa: F405
+DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
+
+
 SECURE_SSL_REDIRECT = False
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
-
-
-DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
