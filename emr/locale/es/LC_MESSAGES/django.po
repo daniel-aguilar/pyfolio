@@ -93,7 +93,7 @@ msgstr "Paciente"
 msgid "Patients"
 msgstr "Pacientes"
 
-#: models.py:73 tests.py:42
+#: models.py:75 tests.py:44
 msgid "Invalid date of birth."
 msgstr "Fecha de nacimiento no válida."
 

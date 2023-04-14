@@ -4,6 +4,7 @@ from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.test import TestCase
+from django.test.utils import ignore_warnings
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from freezegun import freeze_time
@@ -49,6 +50,7 @@ class PatientListApiTestCase(TestCase):
     patients = None
 
     def setUp(self):
+        ignore_warnings(message='No directory at', module='whitenoise.base').enable()
         self.user = User.objects.create_user(USERNAME, password=USER_PASSWORD)
         self.client.login(username=USERNAME, password=USER_PASSWORD)
 
