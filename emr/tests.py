@@ -8,7 +8,7 @@ from django.test.utils import ignore_warnings
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from freezegun import freeze_time
-from model_mommy import mommy
+from model_bakery import baker
 
 from .models import Patient
 
@@ -23,14 +23,14 @@ USER_PASSWORD = 'password'
 class PatientTestCase(TestCase):
 
     def test_calculate_age(self):
-        patient = mommy.make(
+        patient = baker.make(
             Patient,
             date_of_birth=date(1994, 3, 16)
         )
         self.assertEqual(patient.age(), 23)
 
     def test_invalid_date_of_birth(self):
-        patient = mommy.make(
+        patient = baker.make(
             Patient,
             date_of_birth=date(2017, 11, 26)
         )
@@ -55,14 +55,14 @@ class PatientListApiTestCase(TestCase):
         self.client.login(username=USERNAME, password=USER_PASSWORD)
 
         self.patients = [
-            mommy.make(
+            baker.make(
                 Patient,
                 id=1,
                 identification='583930209',
                 first_name='Marshall',
                 last_name='Kane'
             ),
-            mommy.make(
+            baker.make(
                 Patient,
                 id=2,
                 identification='614230563',
