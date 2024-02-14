@@ -1,5 +1,5 @@
 service: folio
-runtime: python311
+runtime: python312
 
 includes:
   - env_variables.yaml
