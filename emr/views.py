@@ -1,4 +1,5 @@
 import json
+from importlib.resources import files
 
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -10,7 +11,6 @@ from django.utils.translation import get_language
 from django.utils.translation import gettext_lazy as _
 from django.utils.translation import pgettext
 from django.views.generic import CreateView, DeleteView, DetailView, TemplateView, UpdateView, View
-from pkg_resources import resource_stream
 
 from .forms import MedicalRecordForm
 from .models import MedicalRecord, Patient
@@ -141,7 +141,7 @@ class DataTablesLanguageFile(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         # HACK: Small patch to localize DataTables
         if get_language() == 'es':
-            with resource_stream('emr.resources.datatables', 'spanish.json') as language_file:
+            with files('emr.resources.datatables').joinpath('spanish.json').open('r') as language_file:
                 return JsonResponse(json.load(language_file))
         else:
             return JsonResponse(None, safe=False)
