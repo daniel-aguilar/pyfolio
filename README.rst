@@ -15,7 +15,7 @@ Requirements
 
 * Python 3.12
 * Make
-* PostgreSQL 14
+* PostgreSQL 15
 * `AWS S3`_
 
 Building
