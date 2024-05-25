@@ -157,7 +157,7 @@ LOGGING = {
         }
     },
     'loggers': {
-        'django': {
+        'emr': {
             'handlers': ['console'],
             'level': 'INFO',
         },
