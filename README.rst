@@ -44,4 +44,4 @@ Run the ``test`` target::
     make test
 
 .. _`AWS S3`: https://aws.amazon.com/s3/
-.. _`PostgreSQL connection URI`: https://www.postgresql.org/docs/14/libpq-connect.html#LIBPQ-CONNSTRING
+.. _`PostgreSQL connection URI`: https://www.postgresql.org/docs/15/libpq-connect.html#LIBPQ-CONNSTRING
