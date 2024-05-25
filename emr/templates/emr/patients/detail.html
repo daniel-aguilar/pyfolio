@@ -2,13 +2,13 @@
 {% load static i18n bootstrap4 %}
 
 {% block head %}
-<link rel="stylesheet" href="{% static "emr/css/patients/detail.css" %}" type="text/css" media="all" />
+<link rel="stylesheet" href="{% static 'emr/css/patients/detail.css' %}" type="text/css" media="all" />
 {% endblock %}
 
 {% block content %}
 <ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="{% url "index" %}">{% translate "Home" %}</a></li>
-  <li class="breadcrumb-item"><a href="{% url "emr:patient-list" %}">{% translate "Patients" %}</a></li>
+  <li class="breadcrumb-item"><a href="{% url 'index' %}">{% translate "Home" %}</a></li>
+  <li class="breadcrumb-item"><a href="{% url 'emr:patient-list' %}">{% translate "Patients" %}</a></li>
   <li class="breadcrumb-item active">{{ patient.full_name }}</li>
 </ol>
 

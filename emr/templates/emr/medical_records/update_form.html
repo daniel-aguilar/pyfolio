@@ -5,9 +5,9 @@
 {% with medical_record=object patient=object.patient %}
 
 <ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="{% url "index" %}">{% translate "Home" %}</a></li>
-  <li class="breadcrumb-item"><a href="{% url "emr:patient-list" %}">{% translate "Patients" %}</a></li>
-  <li class="breadcrumb-item"><a href="{% url "emr:patient-detail" patient.id %}">{{ patient }}</a></li>
+  <li class="breadcrumb-item"><a href="{% url 'index' %}">{% translate "Home" %}</a></li>
+  <li class="breadcrumb-item"><a href="{% url 'emr:patient-list' %}">{% translate "Patients" %}</a></li>
+  <li class="breadcrumb-item"><a href="{% url 'emr:patient-detail' patient.id %}">{{ patient }}</a></li>
   <li class="breadcrumb-item active">{% translate "Update Medical Record" %}</li>
 </ol>
 
@@ -16,7 +16,7 @@
   {% bootstrap_form form %}
   {% buttons %}
   <button type="submit" class="btn btn-success">{% translate "Submit" %}</button>
-  <a class="btn btn-danger" href="{% url "emr:patient-detail" patient.id %}">{% translate "Cancel" %}</a>
+  <a class="btn btn-danger" href="{% url 'emr:patient-detail' patient.id %}">{% translate "Cancel" %}</a>
   {% endbuttons %}
 </form>
 {% endwith %}

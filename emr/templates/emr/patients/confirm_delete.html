@@ -5,7 +5,7 @@
 <form action="" method="post">
   {% csrf_token %}
   <p>{% blocktranslate %}Are you sure you want to remove "{{ object }}"?{% endblocktranslate %}</p>
-  <a class="btn btn-primary" href="{% url "emr:patient-detail" object.id %}">{% translate "Cancel" %}</a>
+  <a class="btn btn-primary" href="{% url 'emr:patient-detail' object.id %}">{% translate "Cancel" %}</a>
   <button class="btn btn-danger" type="submit">{% translate "Remove" %}</button>
 </form>
 {% endblock %}

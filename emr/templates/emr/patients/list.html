@@ -11,7 +11,7 @@
 
 {% block content %}
 <ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="{% url "index" %}">{% translate "Home" %}</a></li>
+  <li class="breadcrumb-item"><a href="{% url 'index' %}">{% translate "Home" %}</a></li>
   <li class="breadcrumb-item active">{% translate "Patients" %}</li>
 </ol>
 
@@ -19,7 +19,7 @@
 
 <h1>{% translate "Patients" %}</h1>
 
-<a class="btn btn-success" href="{% url "emr:patient-create" %}">{% translate "Add Patient" %}</a>
+<a class="btn btn-success" href="{% url 'emr:patient-create' %}">{% translate "Add Patient" %}</a>
 
 <div class="pt-3">
   <table class="table table-striped table-hover table-bordered" id="patient-list">

@@ -17,7 +17,7 @@
       {% with medical_record=patient.medical_record %}
 
       <li class="list-group-item">
-        <a class="btn btn-primary" href="{% url "emr:medical-record-update" medical_record.id %}">{% translate "Update Medical Record" %}</a>
+        <a class="btn btn-primary" href="{% url 'emr:medical-record-update' medical_record.id %}">{% translate "Update Medical Record" %}</a>
       </li>
 
       <li class="list-group-item">
@@ -60,7 +60,7 @@
 
       {% else %}
       <li class="list-group-item">
-        <a class="btn btn-success" href="{% url "emr:medical-record-create" patient.id %}">{% translate "Create Medical Record" %}</a>
+        <a class="btn btn-success" href="{% url 'emr:medical-record-create' patient.id %}">{% translate "Create Medical Record" %}</a>
       </li>
       <li class="list-group-item">
         {% translate "This patient doesn't have a medical record yet." %}
