@@ -4,7 +4,7 @@ boto3==1.34.131
 botocore==1.34.131
 coverage==7.5.4
 dj-database-url==2.2.0
-Django==4.2.13
+Django==4.2.14
 django-bootstrap4==24.3
 django-extensions==3.2.3
 django-s3-storage==0.15.0
