@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'base_site',
     'emr',
     'bootstrap4',
+    'fontawesomefree',
     'django_extensions',
     'django_s3_storage',
 ]
