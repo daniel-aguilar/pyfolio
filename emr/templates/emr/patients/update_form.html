@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static i18n bootstrap4 %}
+{% load static i18n django_bootstrap5 %}
 
 {% block head %}
 <script src="{% static 'emr/js/patients/create_update.js' %}" charset="utf-8"></script>
@@ -16,9 +16,7 @@
 <form method="post" enctype="multipart/form-data" class="form">
   {% csrf_token %}
   {% bootstrap_form form %}
-  {% buttons %}
   <button type="submit" class="btn btn-success">{% translate "Submit" %}</button>
   <a class="btn btn-danger" href="{% url 'emr:patient-detail' object.id %}">{% translate "Cancel" %}</a>
-  {% endbuttons %}
 </form>
 {% endblock %}

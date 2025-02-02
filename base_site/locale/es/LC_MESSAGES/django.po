@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-02 11:24-0600\n"
+"POT-Creation-Date: 2025-02-02 12:11-0600\n"
 "PO-Revision-Date: 2025-02-02 11:28-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -30,16 +30,16 @@ msgstr "Expedientes médicos, hecho fácil"
 msgid "View Patients"
 msgstr "Ver Pacientes"
 
-#: templates/index.html:16 templates/navbar.html:27
-#: templates/registration/login.html:5 templates/registration/login.html:12
+#: templates/index.html:16 templates/navbar.html:24
+#: templates/registration/login.html:5 templates/registration/login.html:11
 msgid "Sign In"
 msgstr "Iniciar Sesión"
 
-#: templates/navbar.html:17
+#: templates/navbar.html:15
 #, python-format
 msgid "Hello, %(user_name)s"
 msgstr "Hola, %(user_name)s"
 
-#: templates/navbar.html:23
+#: templates/navbar.html:20
 msgid "Sign Out"
 msgstr "Cerrar Sesión"

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n bootstrap4 %}
+{% load i18n django_bootstrap5 %}
 
 {% block content %}
 <ol class="breadcrumb">
@@ -12,9 +12,7 @@
 <form method="post" class="form">
   {% csrf_token %}
   {% bootstrap_form form %}
-  {% buttons %}
   <button type="submit" class="btn btn-success">{% translate "Submit" %}</button>
   <a class="btn btn-danger" href="{% url 'emr:patient-detail' patient.id %}">{% translate "Cancel" %}</a>
-  {% endbuttons %}
 </form>
 {% endblock %}

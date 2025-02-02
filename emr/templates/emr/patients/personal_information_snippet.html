@@ -1,77 +1,77 @@
 {% load i18n %}
 
-<div class="card">
-  <div class="card-header">
-    <h1 class="mb-0">
-      <a class="btn btn-link btn-block text-left" data-toggle="collapse"
-          href="#personal-information">
-        {% translate "Personal Information" %}
-      </a>
-    </h1>
-  </div>
+<div class="accordion-item">
+  <h1 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+        data-bs-target="#personal-information">
+      {% translate "Personal Information" %}
+    </button>
+  </h1>
 
-  <div id="personal-information" class="collapse" data-parent="#detail-accordion">
-    <ul class="list-group">
-      <li class="list-group-item">
-        <a class="btn btn-primary" href="{% url 'emr:patient-update' patient.id %}">{% translate "Update Personal Information" %}</a>
-        <a class="btn btn-danger" href="{% url 'emr:patient-delete' patient.id %}">{% translate "Remove Patient" %}</a>
-      </li>
+  <div id="personal-information" class="accordion-collapse collapse" data-bs-parent="#detail-accordion">
+    <div class="accordion-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <a class="btn btn-primary" href="{% url 'emr:patient-update' patient.id %}">{% translate "Update Personal Information" %}</a>
+          <a class="btn btn-danger" href="{% url 'emr:patient-delete' patient.id %}">{% translate "Remove Patient" %}</a>
+        </li>
 
-      <li class="list-group-item table-responsive">
-        <table class="table table-striped">
-          {% if patient.has_profile_picture %}
-          <tr>
-            <th>{% translate "Profile Picture" %}</th>
-            <td><img src="{{ patient.profile_picture.url }}" class="img-fluid rounded profile-picture"></td>
-          </tr>
-          {% endif %}
+        <li class="list-group-item table-responsive">
+          <table class="table table-striped">
+            {% if patient.has_profile_picture %}
+              <tr>
+                <th>{% translate "Profile Picture" %}</th>
+                <td><img src="{{ patient.profile_picture.url }}" class="img-fluid rounded profile-picture"></td>
+              </tr>
+            {% endif %}
 
-          <tr>
-            <th>{% translate "Identification" %}</th>
-            <td>{{ patient.identification }}</td>
-          </tr>
+            <tr>
+              <th>{% translate "Identification" %}</th>
+              <td>{{ patient.identification }}</td>
+            </tr>
 
-          <tr>
-            <th>{% translate "First Name" %}</th>
-            <td>{{ patient.first_name }}</td>
-          </tr>
+            <tr>
+              <th>{% translate "First Name" %}</th>
+              <td>{{ patient.first_name }}</td>
+            </tr>
 
-          <tr>
-            <th>{% translate "Last Name" %}</th>
-            <td>{{ patient.last_name }}</td>
-          </tr>
+            <tr>
+              <th>{% translate "Last Name" %}</th>
+              <td>{{ patient.last_name }}</td>
+            </tr>
 
-          <tr>
-            <th>{% translate "Sex" %}</th>
-            <td>{{ patient.sex_verbose }}</td>
-          </tr>
+            <tr>
+              <th>{% translate "Sex" %}</th>
+              <td>{{ patient.sex_verbose }}</td>
+            </tr>
 
-          <tr>
-            <th>{% translate "Date of Birth" %}</th>
-            <td>{{ patient.date_of_birth }}</td>
-          </tr>
+            <tr>
+              <th>{% translate "Date of Birth" %}</th>
+              <td>{{ patient.date_of_birth }}</td>
+            </tr>
 
-          <tr>
-            <th>{% translate "Age" %}</th>
-            <td>{{ patient.age }}</td>
-          </tr>
+            <tr>
+              <th>{% translate "Age" %}</th>
+              <td>{{ patient.age }}</td>
+            </tr>
 
-          <tr>
-            <th>{% translate "Occupation" %}</th>
-            <td>{{ patient.occupation }}</td>
-          </tr>
+            <tr>
+              <th>{% translate "Occupation" %}</th>
+              <td>{{ patient.occupation }}</td>
+            </tr>
 
-          <tr>
-            <th>{% translate "Phone Number" %}</th>
-            <td>{{ patient.phone_number }}</td>
-          </tr>
-        </table>
-      </li>
+            <tr>
+              <th>{% translate "Phone Number" %}</th>
+              <td>{{ patient.phone_number }}</td>
+            </tr>
+          </table>
+        </li>
 
-      <li class="list-group-item">
-        <h2>{% translate "Address" %}</h2>
-        <p>{{ patient.address }}</p>
-      </li>
-    </ul>
+        <li class="list-group-item">
+          <h2>{% translate "Address" %}</h2>
+          <p>{{ patient.address }}</p>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
