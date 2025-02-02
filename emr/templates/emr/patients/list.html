@@ -33,4 +33,37 @@
     </thead>
   </table>
 </div>
+
+{% verbatim %}
+<script id="options-template" type="text/x-handlebars-template">
+  <div class="options-md">
+    <a class="btn btn-outline-dark" href="{{urls.view}}" title="{{lang.view}}">
+      <span class="fa-solid fa-eye"</span>
+    </a>
+    <a class="btn btn-outline-dark" href="{{urls.update}}" title="{{lang.update}}">
+      <span class="fa-solid fa-pen-to-square"</span>
+    </a>
+    <a class="btn btn-outline-dark" href="{{urls.delete}}" title="{{lang.delete}}">
+      <span class="fa-solid fa-trash-can"</span>
+    </a>
+  </div>
+
+  <div class="dropdown options-sm">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+      <span class="fa-solid fa-bars"></span>
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="{{urls.view}}">
+        {{lang.view}}
+      </a>
+      <a class="dropdown-item" href="{{urls.update}}">
+        {{lang.update}}
+      </a>
+      <a class="dropdown-item" href="{{urls.delete}}">
+        {{lang.delete}}
+      </a>
+    </div>
+  </div>
+</script>
+{% endverbatim %}
 {% endblock %}
