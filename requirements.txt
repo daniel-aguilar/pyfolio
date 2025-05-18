@@ -4,7 +4,7 @@ boto3==1.37.9
 botocore==1.37.9
 coverage==7.6.12
 dj-database-url==2.3.0
-django==4.2.20
+django==5.2.1
 django-bootstrap5==25.1
 django-extensions==3.2.3
 django-s3-storage==0.15.0
@@ -28,6 +28,6 @@ six==1.17.0
 soupsieve==2.6
 sqlparse==0.5.3
 typing-extensions==4.12.2
-tzdata==2025.1
+tzdata==2025.2
 urllib3==2.3.0
 whitenoise==6.9.0
