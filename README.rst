@@ -3,7 +3,11 @@
 =========
 
 .. image:: https://github.com/daniel-aguilar/pyfolio/workflows/build/badge.svg
-   :target: https://github.com/daniel-aguilar/pyfolio/actions
+    :target: https://github.com/daniel-aguilar/pyfolio/actions
+
+.. image:: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json
+    :target: https://github.com/astral-sh/ruff
+    :alt: Ruff
 
 Folio is an Electronic Medical Record (EMR) tailored for a relative of mine.
 

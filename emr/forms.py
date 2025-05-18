@@ -4,7 +4,6 @@ from .models import MedicalRecord
 
 
 class MedicalRecordForm(ModelForm):
-
     class Meta:
         model = MedicalRecord
-        exclude = ['patient']
+        exclude = ["patient"]

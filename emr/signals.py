@@ -20,7 +20,7 @@ def compress_image_handler(instance, **kwargs):
     if instance.profile_picture:
         path = instance.profile_picture.path
         img = Image.open(path)
-        img.save(path, format='JPEG', quality=20, optimize=True)
+        img.save(path, format="JPEG", quality=20, optimize=True)
 
 
 @receiver(post_delete, sender=Patient)

@@ -3,8 +3,8 @@
 test: lint
 	coverage run manage.py test --settings=pyfolio.settings.test
 
-lint: isort
-	flake8
+lint: format
+	ruff check
 
-isort:
-	isort -c .
+format:
+	ruff format --check

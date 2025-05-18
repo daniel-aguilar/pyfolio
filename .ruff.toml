@@ -1,0 +1,5 @@
+exclude = [
+    "manage.py",
+    "pyfolio/settings",
+    "emr/migrations",
+]
