@@ -1,4 +1,4 @@
-.PHONY: lint isort test
+.PHONY: test lint format
 
 test: lint
 	coverage run manage.py test --settings=pyfolio.settings.test
