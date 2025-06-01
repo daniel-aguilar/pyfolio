@@ -8,3 +8,5 @@
 #!include:.gitignore
 !staticfiles/
 !*.mo
+
+.idea/
