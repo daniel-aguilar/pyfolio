@@ -17,7 +17,10 @@
             {% endblocktranslate %}
           </span>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'logout' %}">{% translate "Sign Out" %}</a>
+            <form action="{% url 'logout' %}" method="post">
+              {% csrf_token %}
+              <button class="nav-link"  type="submit">{% translate "Sign Out" %}</button>
+            </form>
           </li>
         {% else %}
           <li class="nav-item">
