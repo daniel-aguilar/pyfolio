@@ -17,7 +17,7 @@ PHP (Yii 2).
 Requirements
 ============
 
-* Python 3.13
+* Python 3.14
 * Make
 * PostgreSQL 15
 * `AWS S3`_
