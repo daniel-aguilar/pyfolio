@@ -33,7 +33,7 @@ Create a ``.env`` file in the root directory, with the following variables:
 
 * ``DATABASE_URL``: A `PostgreSQL connection URI`_.
 * ``DJANGO_SETTINGS_MODULE``: The current Django settings you want to use (e.g.
-  ``pyfolio.settings.dev``).
+  ``pyfolio.settings.development``).
 * ``AWS_ACCESS_KEY_ID`` & ``AWS_SECRET_ACCESS_KEY``: AWS access keys.
 
 Run it::
