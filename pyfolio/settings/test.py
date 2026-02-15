@@ -1,5 +1,5 @@
 # flake8: noqa
-from .dev import *
+from .development import *
 
 DATABASES = {
     'default': {

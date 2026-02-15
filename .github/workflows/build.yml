@@ -5,15 +5,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: actions/setup-python@v6
+      - uses: astral-sh/setup-uv@v7
         with:
-          python-version: '3.14'
-          cache: 'pip'
+          python-version: 3.14
+          enable-cache: true
       - name: Install Dependencies
-        run: pip install -r requirements.txt
+        run: make install-dev
       - name: Lint
         run: make lint
       - name: Run Tests
-        run: |
-          make test
-          coverage report
+        run: make test
