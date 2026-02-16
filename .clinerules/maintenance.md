@@ -1,13 +1,14 @@
 # Pyfolio Maintenance Runbook
 
 ## Human Setup
-- Install latest Python, uv, and make (see README.rst for details)
-- Run `make install-dev` (uv handles the venv and dependencies automatically)
-- Configure `.env` file (see README.rst for required variables)
+- Install the Python version specified in `pyproject.toml` (`requires-python`), `uv`, and `make`.
+- Run `make install-dev` (uv handles the venv and dependencies automatically, including the `dev` extra).
+- Configure `.env` file (see README.rst for required variables).
 
 ## Dependency Management (using uv)
 - Update dependencies in `pyproject.toml`
-  - **Constraint**: Stick to **Django LTS** versions. Do not upgrade to the latest major version unless it is the current LTS.
+  - **Source of Truth**: Always treat `pyproject.toml` as the master reference for Python versions and dependency constraints.
+  - **Constraint**: Stick to **Django LTS** versions. Verify the current version in `pyproject.toml` against the official Django roadmap. Do not upgrade to a new major version unless it is the current LTS.
   - **Compatibility**: Before upgrading Django, verify that key third-party packages (e.g., `django-extensions`, `django-bootstrap5`, `django-s3-storage`) support the target LTS version.
 - Synchronize and lock: `make lock`
 - **Eager Upgrade**: Run `uv lock --upgrade` to update all dependencies to their latest allowed versions.
@@ -22,7 +23,7 @@
 - Update any other JS/CSS libraries in `base.html` similarly (always verify SRI hashes).
 
 ## Periodic Updates
-- Update Python version and GitHub Action versions in `pyproject.toml`, `app.yaml`, and `.github/workflows/build.yml`.
+- Ensure Python version and GitHub Action versions are consistent across `pyproject.toml`, `app.yaml`, and `.github/workflows/build.yml` (refer to `requires-python` in `pyproject.toml`).
 - Update copyright year in LICENSE or templates.
 
 ## Internationalization (Spanish)
@@ -30,15 +31,15 @@
 - `uv run manage.py compilemessages`
 
 ## Version & Deployment (CRITICAL SEQUENCE)
-1. **Verification**: Run `make lint` and `make test`.
+1. **Verification**: Run `make lint` (includes formatting check via `ruff`) and `make test`.
 2. **Prepare Local Content**:
    - Check `base_site/templates/base.html` for any CDN dependencies that need bumping (update versions and SRI hashes).
    - Run `uv run manage.py makemessages -l es` (per app: `base_site`, `emr`).
    - Run `uv run manage.py compilemessages`.
    - Run `uv run manage.py collectstatic` (ensures `staticfiles/` is updated).
 3. **Bump Version**:
-   - Update `pyfolio/__init__.py` with the new semantic version.
-   - Run `make lock && make export` to reflect the version in generated files.
+   - Update `pyfolio/__init__.py` with the new semantic version (this is the dynamic source for the build system).
+   - Run `make lock && make export` to reflect the version in `uv.lock` and `requirements.txt`.
 4. **Commit & Tag**:
    - `git add .`
    - `git commit -m "Pyfolio vX.Y.Z"`
