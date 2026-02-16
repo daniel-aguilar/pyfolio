@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-05 14:19-0600\n"
+"POT-Creation-Date: 2026-02-16 02:13+0000\n"
 "PO-Revision-Date: 2025-02-02 11:28-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -18,28 +18,29 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.5\n"
 
-#: templates/index.html:10
+#: base_site/templates/index.html:10
 msgid "Welcome to Folio"
 msgstr "Bienvenido(a) a Folio"
 
-#: templates/index.html:11
+#: base_site/templates/index.html:11
 msgid "Medical records, made easy"
 msgstr "Expedientes médicos, hecho fácil"
 
-#: templates/index.html:14
+#: base_site/templates/index.html:14
 msgid "View Patients"
 msgstr "Ver Pacientes"
 
-#: templates/index.html:16 templates/navbar.html:27
-#: templates/registration/login.html:5 templates/registration/login.html:11
+#: base_site/templates/index.html:16 base_site/templates/navbar.html:27
+#: base_site/templates/registration/login.html:5
+#: base_site/templates/registration/login.html:11
 msgid "Sign In"
 msgstr "Iniciar Sesión"
 
-#: templates/navbar.html:15
+#: base_site/templates/navbar.html:15
 #, python-format
 msgid "Hello, %(user_name)s"
 msgstr "Hola, %(user_name)s"
 
-#: templates/navbar.html:22
+#: base_site/templates/navbar.html:22
 msgid "Sign Out"
 msgstr "Cerrar Sesión"

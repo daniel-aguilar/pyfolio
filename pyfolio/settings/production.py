@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'base_site',
     'emr',
     'django_bootstrap5',
-    'django_extensions',
     'django_s3_storage',
 ]
 

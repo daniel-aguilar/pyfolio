@@ -8,6 +8,11 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+INSTALLED_APPS += [
+    'django_extensions',
+]
+
+
 LOGGING['handlers']['file'] = {
     'class': 'logging.FileHandler',
     'filename': 'application.log',
