@@ -20,11 +20,11 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-    "coverage>=7.13.4",
-    "django-extensions>=4.1",
-    "freezegun>=1.5.5",
-    "model-bakery>=1.21.0",
-    "ruff>=0.14.10",
+    "coverage>=7",
+    "django-extensions>=4",
+    "freezegun>=1",
+    "model-bakery>=1",
+    "ruff>=0.15",
 ]
 
 [tool.hatch.version]
