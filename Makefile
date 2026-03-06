@@ -20,7 +20,7 @@ test: lint
 	uv run coverage report
 
 lock:
-	uv lock
+	uv lock --upgrade
 
 export:
 	uv export --no-dev --no-emit-project -o requirements.txt
