@@ -22,5 +22,6 @@ test: lint
 lock:
 	uv lock --upgrade
 
-export:
-	uv export --no-dev --no-emit-project -o requirements.txt
+export: lock
+	uv export --quiet --no-dev --no-emit-project --format requirements-txt \
+		-o requirements.txt
