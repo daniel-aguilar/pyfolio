@@ -39,3 +39,8 @@ exclude = [
     "pyfolio/settings",
     "emr/migrations",
 ]
+
+[tool.coverage.run]
+source = [
+    "emr"
+]
