@@ -40,7 +40,7 @@ class PatientList(LoginRequiredMixin, TemplateView):
             },
             "lang": {
                 "view": pgettext("verb", "View"),
-                "update": _("Edit"),
+                "update": _("Update Personal Information"),
                 "delete": _("Remove"),
             },
         }

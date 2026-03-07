@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-16 02:13+0000\n"
-"PO-Revision-Date: 2025-02-02 11:29-0600\n"
+"POT-Creation-Date: 2026-03-07 22:09+0000\n"
+"PO-Revision-Date: 2026-03-07 16:20-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.8\n"
 
 #: emr/apps.py:8
 msgid "Electronic Medical Record"
@@ -211,7 +211,7 @@ msgid "Personal Information"
 msgstr "Información Personal"
 
 #: emr/templates/emr/patients/personal_information_snippet.html:15
-#: emr/templates/emr/patients/update_form.html:13
+#: emr/templates/emr/patients/update_form.html:13 emr/views.py:43
 msgid "Update Personal Information"
 msgstr "Actualizar Información Personal"
 
@@ -227,10 +227,6 @@ msgstr "Edad"
 msgctxt "verb"
 msgid "View"
 msgstr "Ver"
-
-#: emr/views.py:43
-msgid "Edit"
-msgstr "Editar"
 
 #: emr/views.py:68
 #, python-format
