@@ -7,15 +7,15 @@ name = "pyfolio"
 dynamic = ["version"]
 requires-python = "~=3.14.3"
 dependencies = [
-    "django~=5.2.12",
-    "django-bootstrap5>=26.1",
-    "dj-database-url>=3.1.2",
-    "django-s3-storage>=0.15.0",
-    "pillow>=12.1.1",
-    "psycopg[binary]>=3.3.3",
-    "python-dotenv>=1.2.2",
-    "gunicorn>=25.1.0",
-    "whitenoise>=6.12.0",
+    "django~=5.2",
+    "django-bootstrap5~=26.1",
+    "dj-database-url~=3.1",
+    "django-s3-storage~=0.15",
+    "pillow~=12.1",
+    "psycopg[binary]~=3.3",
+    "python-dotenv~=1.2",
+    "gunicorn~=25.3",
+    "whitenoise~=6.12",
 ]
 
 [project.optional-dependencies]
@@ -31,7 +31,7 @@ dev = [
 path = "pyfolio/__init__.py"
 
 [tool.uv]
-required-version = ">=0.10.2"
+required-version = "~=0.10"
 
 [tool.ruff]
 exclude = [
