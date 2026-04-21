@@ -153,17 +153,10 @@ LOGGING = {
     'handlers': {
         'console': {
             'class': 'logging.StreamHandler',
-            'formatter': 'default',
         },
     },
-    'formatters': {
-        'default': {
-            'style': '{',
-            'format': '{asctime} {levelname: <8} [{name}] {message}',
-        }
-    },
     'loggers': {
-        'emr': {
+        'base_site': {
             'handlers': ['console'],
             'level': 'INFO',
         },

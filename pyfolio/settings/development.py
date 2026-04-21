@@ -18,19 +18,6 @@ DATABASES['default']['OPTIONS'] = {
 }
 
 
-LOGGING['handlers']['file'] = {
-    'class': 'logging.FileHandler',
-    'filename': 'application.log',
-    'formatter': 'default',
-}
-LOGGING['loggers'] = {
-    'emr': {
-        'handlers': ['console', 'file'],
-        'level': 'DEBUG',
-    },
-}
-
-
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STORAGES['default'] = {
