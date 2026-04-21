@@ -13,6 +13,11 @@ INSTALLED_APPS += [
 ]
 
 
+DATABASES['default']['OPTIONS'] = {
+    'sslmode': 'disable'
+}
+
+
 LOGGING['handlers']['file'] = {
     'class': 'logging.FileHandler',
     'filename': 'application.log',
