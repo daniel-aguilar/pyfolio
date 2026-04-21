@@ -1,0 +1,10 @@
+name: Supabase Activity Scheduler
+on:
+  schedule:
+    - cron: "0 0 * * WED,SUN"
+jobs:
+  send-http-request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send HTTP Request
+        run: curl https://folio-dot-delicious-gyros.uc.r.appspot.com/sb/wake-up
