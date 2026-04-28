@@ -3,18 +3,33 @@
 from django.db import migrations
 
 CREATE_FN = """
+    CREATE TABLE IF NOT EXISTS public.keepalive (
+        id        smallint PRIMARY KEY,
+        last_ping timestamptz NOT NULL DEFAULT NOW()
+    );
+    INSERT INTO public.keepalive (id, last_ping) VALUES (1, NOW());
+
     CREATE OR REPLACE FUNCTION fn_prevent_pausing()
     RETURNS SMALLINT LANGUAGE plpgsql AS $$
+    DECLARE
+        v_count smallint;
     BEGIN
-        PERFORM pg_sleep_for('45 seconds');
-        RETURN COUNT(*) FROM emr_medical_record
-            WHERE last_modified BETWEEN
-                (CURRENT_TIMESTAMP - INTERVAL '7 day') AND CURRENT_TIMESTAMP;
+        UPDATE public.keepalive SET last_ping = NOW() WHERE id = 1;
+
+        SELECT COUNT(*) INTO v_count
+        FROM emr_medical_record
+        WHERE last_modified BETWEEN
+            (CURRENT_TIMESTAMP - INTERVAL '7 day') AND CURRENT_TIMESTAMP;
+
+        RETURN v_count;
     END;
     $$;
 """
 
-DROP_FN = "DROP FUNCTION IF EXISTS fn_prevent_pausing();"
+DROP_FN = """
+    DROP FUNCTION IF EXISTS fn_prevent_pausing();
+    DROP TABLE IF EXISTS public.keepalive;
+"""
 
 
 def forwards_func(apps, schema_editor):
