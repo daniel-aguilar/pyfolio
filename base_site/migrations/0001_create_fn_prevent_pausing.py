@@ -21,6 +21,8 @@ CREATE_FN = """
         WHERE last_modified BETWEEN
             (CURRENT_TIMESTAMP - INTERVAL '7 day') AND CURRENT_TIMESTAMP;
 
+        RAISE LOG 'fn_prevent_pausing: last_ping updated, recent records: %%', v_count;
+
         RETURN v_count;
     END;
     $$;
