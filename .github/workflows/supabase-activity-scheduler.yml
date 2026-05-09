@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Send HTTP Request
-        run: curl https://folio-dot-delicious-gyros.uc.r.appspot.com/sb/wake-up
+        run: curl --fail https://folio-dot-delicious-gyros.uc.r.appspot.com/sb/wake-up
