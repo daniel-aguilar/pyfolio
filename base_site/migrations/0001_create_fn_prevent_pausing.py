@@ -4,15 +4,15 @@ from django.db import migrations
 
 CREATE_FN = """
     CREATE TABLE IF NOT EXISTS public.keepalive (
-        id        smallint PRIMARY KEY,
+        id        bigint PRIMARY KEY,
         last_ping timestamptz NOT NULL DEFAULT NOW()
     );
     INSERT INTO public.keepalive (id, last_ping) VALUES (1, NOW());
 
     CREATE OR REPLACE FUNCTION fn_prevent_pausing()
-    RETURNS SMALLINT LANGUAGE plpgsql AS $$
+    RETURNS BIGINT LANGUAGE plpgsql AS $$
     DECLARE
-        v_count smallint;
+        v_count bigint;
     BEGIN
         UPDATE public.keepalive SET last_ping = NOW() WHERE id = 1;
 
