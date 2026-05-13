@@ -32,6 +32,34 @@ echo "CSS SRI:" && curl -sL "https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-${DT_V
 
 Update the version in the CDN URL and the `integrity` attribute in `base_site/templates/base.html` with these values. Also verify that the jQuery version in the CDN URL path (`jq-3.7.0`) still matches what is bundled with the new DataTables release; update it if it has changed.
 
+### Updating Other CDN Libraries (Handlebars.js, Bootstrap Datepicker)
+
+SRI hashes must **never** be guessed or assumed. Use these commands to check versions and compute hashes:
+
+```bash
+# 1. Check Handlebars.js version
+HANDLEBARS_VERSION=$(curl -s "https://api.cdnjs.com/libraries/handlebars.js" | jq -r '.version')
+echo "Latest Handlebars.js: $HANDLEBARS_VERSION"
+
+# 2. Compute Handlebars.js SRI hash
+echo "Handlebars.js SRI:" && curl -sL "https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/${HANDLEBARS_VERSION}/handlebars.min.js" | openssl dgst -sha512 -binary | base64 | sed 's/^/sha512-/'
+
+# 3. Check Bootstrap Datepicker version
+DATEPICKER_VERSION=$(curl -s "https://api.cdnjs.com/libraries/bootstrap-datepicker" | jq -r '.version')
+echo "Latest Bootstrap Datepicker: $DATEPICKER_VERSION"
+
+# 4. Compute Bootstrap Datepicker JS SRI hash
+echo "Datepicker JS SRI:" && curl -sL "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/${DATEPICKER_VERSION}/js/bootstrap-datepicker.min.js" | openssl dgst -sha512 -binary | base64 | sed 's/^/sha512-/'
+
+# 5. Compute Bootstrap Datepicker Spanish locale SRI hash
+echo "Datepicker ES SRI:" && curl -sL "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/${DATEPICKER_VERSION}/locales/bootstrap-datepicker.es.min.js" | openssl dgst -sha512 -binary | base64 | sed 's/^/sha512-/'
+
+# 6. Compute Bootstrap Datepicker CSS SRI hash
+echo "Datepicker CSS SRI:" && curl -sL "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/${DATEPICKER_VERSION}/css/bootstrap-datepicker.min.css" | openssl dgst -sha512 -binary | base64 | sed 's/^/sha512-/'
+```
+
+Update the version numbers in the CDN URLs and the `integrity` attribute values in `base_site/templates/base.html`. Ensure all Bootstrap Datepicker resources (JS, Spanish locale, CSS) use the same version.
+
 ---
 
 # Pyfolio Maintenance Runbook
@@ -73,12 +101,12 @@ Update the version in the CDN URL and the `integrity` attribute in `base_site/te
 1. **Verification**: Run `make lint` (includes formatting check via `ruff`) and `make test`.
 2. **Prepare Local Content**:
    - Check `base_site/templates/base.html` for any CDN dependencies that need bumping (update versions and SRI hashes).
-   - Run `uv run manage.py makemessages -l es` (per app: `base_site`, `emr`).
+   - Run `uv run manage.py makemessages -l es` (from project root, processes all apps).
    - Run `uv run manage.py compilemessages`.
    - Run `uv run manage.py collectstatic` (ensures `staticfiles/` is updated).
 3. **Bump Version**:
    - Update `pyfolio/__init__.py` with the new semantic version (this is the dynamic source for the build system).
-   - Run `make lock && make export` to reflect the version in `uv.lock` and `requirements.txt`.
+   - Run `make export` to reflect the version in `uv.lock` and `requirements.txt`.
 4. **Commit & Tag**:
    - `git add .`
    - `git commit -m "Pyfolio vX.Y.Z"`
