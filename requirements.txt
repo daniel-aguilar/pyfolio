@@ -4,13 +4,13 @@ asgiref==3.11.1 \
     --hash=sha256:5f184dc43b7e763efe848065441eac62229c9f7b0475f41f80e207a114eda4ce \
     --hash=sha256:e8667a091e69529631969fd45dc268fa79b99c92c5fcdda727757e52146ec133
     # via django
-boto3==1.42.97 \
-    --hash=sha256:2833dbeda3670ea610ad48dff7d27cdc829dbbfcdfbc6b750b673948e949b6f0 \
-    --hash=sha256:966e49f0510af9a64057a902b7df53d4348c447de0d3df4cc855dfd85e058fcd
+boto3==1.43.6 \
+    --hash=sha256:179601ec2992726a718053bf41e43c223ceba397d31ceab11f64d9c910d9fc3a \
+    --hash=sha256:e6315effaf12b890b99956e6f8e2c3000a3f64e4ee91943cec3895ce9a836afb
     # via django-s3-storage
-botocore==1.42.97 \
-    --hash=sha256:5c0bb00e32d16ff6d278cc8c9e10dc3672d9c1d569031635ac3c908a60de8310 \
-    --hash=sha256:77d2c8ce1bc592d3fbd7c01c35836f4a5b0cac2ca03ccdf6ffc60faa16b5fadc
+botocore==1.43.6 \
+    --hash=sha256:b1e395b347356860398da42e61c808cf1e34b6fa7180cf2b9d87d986e1a06ba0 \
+    --hash=sha256:b6d1fdbc6f65a5fe0b7e947823aa37535d3f39f3ba4d21110fab1f55bbbcc04b
     # via
     #   boto3
     #   s3transfer
@@ -18,9 +18,9 @@ dj-database-url==3.1.2 \
     --hash=sha256:544e015fee3efa5127a1eb1cca465f4ace578265b3671fe61d0ed7dbafb5ec8a \
     --hash=sha256:63c20e4bbaa51690dfd4c8d189521f6bf6bc9da9fcdb23d95d2ee8ee87f9ec62
     # via pyfolio
-django==5.2.13 \
-    --hash=sha256:5788fce61da23788a8ce6f02583765ab060d396720924789f97fa42119d37f7a \
-    --hash=sha256:a31589db5188d074c63f0945c3888fad104627dfcc236fb2b97f71f89da33bc4
+django==5.2.14 \
+    --hash=sha256:58a63ba841662e5c686b57ba1fec52ddd68c0b93bd96ac3029d55728f00bf8a2 \
+    --hash=sha256:6f712143bd3064310d1f50fac859c3e9a274bdcfc9595339853be7779297fc76
     # via
     #   dj-database-url
     #   django-bootstrap5
@@ -76,22 +76,22 @@ pillow==12.2.0 \
     --hash=sha256:f278f034eb75b4e8a13a54a876cc4a5ab39173d2cdd93a638e1b467fc545ac43 \
     --hash=sha256:fb043ee2f06b41473269765c2feae53fc2e2fbf96e5e22ca94fb5ad677856f06
     # via pyfolio
-psycopg==3.3.3 \
-    --hash=sha256:5e9a47458b3c1583326513b2556a2a9473a1001a56c9efe9e587245b43148dd9 \
-    --hash=sha256:f96525a72bcfade6584ab17e89de415ff360748c766f0106959144dcbb38c698
+psycopg==3.3.4 \
+    --hash=sha256:b6bbc25ccf05c8fad3b061d9db2ef0909a555171b84b07f29458a447253d679a \
+    --hash=sha256:e21207764952cff81b6b8bdacad9a3939f2793367fdac2987b3aac36a651b5bc
     # via pyfolio
-psycopg-binary==3.3.3 ; implementation_name != 'pypy' \
-    --hash=sha256:111c59897a452196116db12e7f608da472fbff000693a21040e35fc978b23430 \
-    --hash=sha256:165f22ab5a9513a3d7425ffb7fcc7955ed8ccaeef6d37e369d6cc1dff1582383 \
-    --hash=sha256:17bb6600e2455993946385249a3c3d0af52cd70c1c1cdbf712e9d696d0b0bf1b \
-    --hash=sha256:258d1ea53464d29768bf25930f43291949f4c7becc706f6e220c515a63a24edd \
-    --hash=sha256:47f06fcbe8542b4d96d7392c476a74ada521c5aebdb41c3c0155f6595fc14c8d \
-    --hash=sha256:497852c5eaf1f0c2d88ab74a64a8097c099deac0c71de1cbcf18659a8a04a4b2 \
-    --hash=sha256:533efe6dc3a7cba5e2a84e38970786bb966306863e45f3db152007e9f48638a6 \
-    --hash=sha256:5958dbf28b77ce2033482f6cb9ef04d43f5d8f4b7636e6963d5626f000efb23e \
-    --hash=sha256:642050398583d61c9856210568eb09a8e4f2fe8224bf3be21b67a370e677eead \
-    --hash=sha256:a6af77b6626ce92b5817bf294b4d45ec1a6161dba80fc2d82cdffdd6814fd023 \
-    --hash=sha256:e7800e6c6b5dc4b0ca7cc7370f770f53ac83886b76afda0848065a674231e856
+psycopg-binary==3.3.4 ; implementation_name != 'pypy' \
+    --hash=sha256:1fbaa292a3c8bb61b45df1ad3da1908ccee7cb889db9425e3557d9e34e2a4829 \
+    --hash=sha256:28b7398fdd19db3232c884fb24550bdfe951221f510e195e233299e4c9b78f97 \
+    --hash=sha256:2c09aad7051326e7603c14e50636db9c01f78272dc54b3accff03d46370461e6 \
+    --hash=sha256:46893c26858be12cc49ca4226ed6a60b4bfccadd946b3bebb783a60b38788228 \
+    --hash=sha256:47c656a8a7ba6eb0cff1801a4caaa9c8bdc12d03080e273aff1c8ac39971a77e \
+    --hash=sha256:514404ed543efd620c85602b747df2a23cf1241b4067199e1a66f2d2757aaa41 \
+    --hash=sha256:6b9016b1714da4dd5ecaaa75b82098aa5a0b87854ce9b092e21c27c4ae23e014 \
+    --hash=sha256:8c0056529e68dbe9184cd4019a1f3d8f3a4ead2f6fc7a5afcf27d3314edd1277 \
+    --hash=sha256:94596f9e7633ee3f6440711d43bb70aa31cc0a46a900ab8b4201a366ace5c9e7 \
+    --hash=sha256:c37e024c07308cd06cf3ec51bfd0e7f6157585a4d84d1bce4a7f5f7913719bf8 \
+    --hash=sha256:df1d567fc430f6df15c9fcf67d87685fc49bdb325adc0db5af1adfb2f44eb5c9
     # via psycopg
 python-dateutil==2.9.0.post0 \
     --hash=sha256:37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3 \
@@ -101,9 +101,9 @@ python-dotenv==1.2.2 \
     --hash=sha256:1d8214789a24de455a8b8bd8ae6fe3c6b69a5e3d64aa8a8e5d68e694bbcb285a \
     --hash=sha256:2c371a91fbd7ba082c2c1dc1f8bf89ca22564a087c2c287cd9b662adde799cf3
     # via pyfolio
-s3transfer==0.16.1 \
-    --hash=sha256:61bcd00ccb83b21a0fe7e91a553fff9729d46c83b4e0106e7c314a733891f7c2 \
-    --hash=sha256:8e424355754b9ccb32467bdc568edf55be82692ef2002d934b1311dbb3b9e524
+s3transfer==0.17.0 \
+    --hash=sha256:9edeb6d1c3c2f89d6050348548834ad8289610d886e5bf7b7207728bd43ce33a \
+    --hash=sha256:ce3801712acf4ad3e89fb9990df97b4972e93f4b3b0004d214be5bce12814c20
     # via boto3
 six==1.17.0 \
     --hash=sha256:4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274 \
@@ -119,9 +119,9 @@ tzdata==2026.2 ; sys_platform == 'win32' \
     # via
     #   django
     #   psycopg
-urllib3==2.6.3 \
-    --hash=sha256:1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed \
-    --hash=sha256:bf272323e553dfb2e87d9bfd225ca7b0f467b919d7bbd355436d3fd37cb0acd4
+urllib3==2.7.0 \
+    --hash=sha256:231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c \
+    --hash=sha256:9fb4c81ebbb1ce9531cce37674bbc6f1360472bc18ca9a553ede278ef7276897
     # via botocore
 whitenoise==6.12.0 \
     --hash=sha256:f723ebb76a112e98816ff80fcea0a6c9b8ecde835f8ddda25df7a30a3c2db6ad \
