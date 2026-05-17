@@ -1,7 +1,7 @@
 name: Supabase Activity Scheduler
 on:
   schedule:
-    - cron: "0 0 * * WED,SUN"
+    - cron: "0 0,12 * * *"
 jobs:
   send-http-request:
     runs-on: ubuntu-latest
