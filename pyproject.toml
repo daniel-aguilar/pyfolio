@@ -5,16 +5,16 @@ build-backend = "hatchling.build"
 [project]
 name = "pyfolio"
 dynamic = ["version"]
-requires-python = "~=3.14.3"
+requires-python = "~=3.14.6"
 dependencies = [
     "django~=5.2",
-    "django-bootstrap5~=26.1",
+    "django-bootstrap5~=26.2",
     "dj-database-url~=3.1",
     "django-s3-storage~=0.15",
-    "pillow~=12.1",
+    "pillow~=12.3",
     "psycopg[binary]~=3.3",
     "python-dotenv~=1.2",
-    "gunicorn~=25.3",
+    "gunicorn~=26.0",
     "whitenoise~=6.12",
 ]
 
@@ -31,7 +31,7 @@ dev = [
 path = "pyfolio/__init__.py"
 
 [tool.uv]
-required-version = "~=0.10"
+required-version = "~=0.11"
 
 [tool.ruff]
 exclude = [
