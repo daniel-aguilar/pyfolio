@@ -16,25 +16,47 @@ AI assistants may prepare the repository, commit changes, and create local tags.
 
 ### Updating DataTables (CDN)
 
-SRI hashes must **never** be guessed or assumed. Use these commands to get the correct version and compute the hashes from the actual files:
+SRI hashes must **never** be guessed or assumed. Use `fetch_and_hash` (defined once below) so a bad version/URL fails loudly instead of silently hashing a 404 page or truncated response as if it were real:
 
 ```bash
+# Reusable helper: downloads a URL, fails if the HTTP request errored or the
+# body is suspiciously small (a 404/error page, not a real minified asset),
+# then prints the SRI hash. Run this once per shell session before the
+# per-library blocks below.
+fetch_and_hash() {
+    local url="$1" algo="$2" min_bytes="${3:-200}"
+    local tmp; tmp=$(mktemp)
+    if ! curl -sfL "$url" -o "$tmp"; then
+        echo "ERROR: request failed for $url (bad version or dead URL)" >&2
+        rm -f "$tmp"; return 1
+    fi
+    local size; size=$(wc -c < "$tmp")
+    if [ "$size" -lt "$min_bytes" ]; then
+        echo "ERROR: response for $url is only ${size} bytes (< ${min_bytes}) — likely an error page, not the real asset" >&2
+        rm -f "$tmp"; return 1
+    fi
+    openssl dgst "-${algo}" -binary "$tmp" | base64 | sed "s/^/${algo}-/"
+    rm -f "$tmp"
+}
+
 # 1. Get the latest DataTables version
 DT_VERSION=$(curl -s https://api.github.com/repos/DataTables/DataTables/releases/latest | jq -r '.tag_name')
 echo "Latest DataTables: $DT_VERSION"
 
-# 2. Compute the JS SRI hash
-echo "JS SRI:" && curl -sL "https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-${DT_VERSION}/datatables.min.js" | openssl dgst -sha384 -binary | base64 | sed 's/^/sha384-/'
+# 2. Compute the JS SRI hash (fails loudly if $DT_VERSION doesn't exist on the CDN)
+echo "JS SRI:" && fetch_and_hash "https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-${DT_VERSION}/datatables.min.js" sha384
 
 # 3. Compute the CSS SRI hash
-echo "CSS SRI:" && curl -sL "https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-${DT_VERSION}/datatables.min.css" | openssl dgst -sha384 -binary | base64 | sed 's/^/sha384-/'
+echo "CSS SRI:" && fetch_and_hash "https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-${DT_VERSION}/datatables.min.css" sha384
 ```
+
+If either `fetch_and_hash` call errors out, **stop** — do not fall back to a remembered or guessed hash. Investigate the actual version/URL instead.
 
 Update the version in the CDN URL and the `integrity` attribute in `base_site/templates/base.html` with these values. Also verify that the jQuery version in the CDN URL path (`jq-3.7.0`) still matches what is bundled with the new DataTables release; update it if it has changed.
 
 ### Updating Other CDN Libraries (Handlebars.js, Bootstrap Datepicker)
 
-SRI hashes must **never** be guessed or assumed. Use these commands to check versions and compute hashes:
+SRI hashes must **never** be guessed or assumed. Use the same `fetch_and_hash` helper defined above (re-declare it if running in a fresh shell) to check versions and compute hashes:
 
 ```bash
 # 1. Check Handlebars.js version
@@ -42,21 +64,23 @@ HANDLEBARS_VERSION=$(curl -s "https://api.cdnjs.com/libraries/handlebars.js" | j
 echo "Latest Handlebars.js: $HANDLEBARS_VERSION"
 
 # 2. Compute Handlebars.js SRI hash
-echo "Handlebars.js SRI:" && curl -sL "https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/${HANDLEBARS_VERSION}/handlebars.min.js" | openssl dgst -sha512 -binary | base64 | sed 's/^/sha512-/'
+echo "Handlebars.js SRI:" && fetch_and_hash "https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/${HANDLEBARS_VERSION}/handlebars.min.js" sha512
 
 # 3. Check Bootstrap Datepicker version
 DATEPICKER_VERSION=$(curl -s "https://api.cdnjs.com/libraries/bootstrap-datepicker" | jq -r '.version')
 echo "Latest Bootstrap Datepicker: $DATEPICKER_VERSION"
 
 # 4. Compute Bootstrap Datepicker JS SRI hash
-echo "Datepicker JS SRI:" && curl -sL "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/${DATEPICKER_VERSION}/js/bootstrap-datepicker.min.js" | openssl dgst -sha512 -binary | base64 | sed 's/^/sha512-/'
+echo "Datepicker JS SRI:" && fetch_and_hash "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/${DATEPICKER_VERSION}/js/bootstrap-datepicker.min.js" sha512
 
-# 5. Compute Bootstrap Datepicker Spanish locale SRI hash
-echo "Datepicker ES SRI:" && curl -sL "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/${DATEPICKER_VERSION}/locales/bootstrap-datepicker.es.min.js" | openssl dgst -sha512 -binary | base64 | sed 's/^/sha512-/'
+# 5. Compute Bootstrap Datepicker Spanish locale SRI hash (locale file is small, lower the size floor)
+echo "Datepicker ES SRI:" && fetch_and_hash "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/${DATEPICKER_VERSION}/locales/bootstrap-datepicker.es.min.js" sha512 200
 
 # 6. Compute Bootstrap Datepicker CSS SRI hash
-echo "Datepicker CSS SRI:" && curl -sL "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/${DATEPICKER_VERSION}/css/bootstrap-datepicker.min.css" | openssl dgst -sha512 -binary | base64 | sed 's/^/sha512-/'
+echo "Datepicker CSS SRI:" && fetch_and_hash "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/${DATEPICKER_VERSION}/css/bootstrap-datepicker.min.css" sha512
 ```
+
+If any `fetch_and_hash` call errors out, **stop** — do not fall back to a remembered or guessed hash. Investigate the actual version/URL instead.
 
 Update the version numbers in the CDN URLs and the `integrity` attribute values in `base_site/templates/base.html`. Ensure all Bootstrap Datepicker resources (JS, Spanish locale, CSS) use the same version.
 
