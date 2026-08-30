@@ -7,9 +7,8 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse, reverse_lazy
-from django.utils.translation import get_language
+from django.utils.translation import get_language, pgettext
 from django.utils.translation import gettext_lazy as _
-from django.utils.translation import pgettext
 from django.views.generic import (
     CreateView,
     DeleteView,
@@ -69,7 +68,7 @@ class PatientCreate(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
     def get_success_message(self, cleaned_data):
         patient = self.object
-        return self.success_message % dict(patient_full_name=patient.full_name())
+        return self.success_message % {"patient_full_name": patient.full_name()}
 
 
 class PatientUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
@@ -93,7 +92,8 @@ class PatientDelete(LoginRequiredMixin, DeleteView):
     def delete(self, request, *args, **kwargs):
         patient = self.get_object()
         messages.success(
-            request, self.success_message % dict(patient_full_name=patient.full_name())
+            request,
+            self.success_message % {"patient_full_name": patient.full_name()},
         )
         return super().delete(self, request, *args, **kwargs)
 

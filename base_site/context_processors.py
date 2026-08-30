@@ -1,5 +1,5 @@
-from datetime import datetime
+from django.utils import timezone
 
 
 def current_year(request):
-    return {"current_year": datetime.today().strftime("%Y")}
+    return {"current_year": timezone.now().strftime("%Y")}

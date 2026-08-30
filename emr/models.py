@@ -1,16 +1,16 @@
-from datetime import date
 from uuid import uuid4
 
 from dateutil.relativedelta import relativedelta
 from django.core.exceptions import ValidationError
 from django.db import models
+from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
 
 
 def patient_profile_picture_path(instance, filename):
-    return "profile_pictures/{0}.jpg".format(str(uuid4()))
+    return f"profile_pictures/{uuid4()}.jpg"
 
 
 class Patient(models.Model):
@@ -51,13 +51,13 @@ class Patient(models.Model):
         return self.full_name()
 
     def full_name(self):
-        return "{0} {1}".format(self.first_name, self.last_name)
+        return f"{self.first_name} {self.last_name}"
 
     def sex_verbose(self):
         return dict(self.SEX_CHOICES)[self.sex]
 
     def age(self):
-        return relativedelta(date.today(), self.date_of_birth).years
+        return relativedelta(timezone.localdate(), self.date_of_birth).years
 
     def has_medical_record(self):
         return hasattr(self, "medical_record")
@@ -66,7 +66,7 @@ class Patient(models.Model):
         return bool(self.profile_picture)
 
     def clean(self):
-        if self.date_of_birth > date.today():
+        if self.date_of_birth > timezone.localdate():
             raise ValidationError({"date_of_birth": _("Invalid date of birth.")})
 
 

@@ -24,7 +24,7 @@ dev = [
     "django-extensions>=4",
     "freezegun>=1",
     "model-bakery>=1",
-    "ruff>=0.15",
+    "ruff~=0.16.5",
 ]
 
 [tool.hatch.version]
@@ -38,6 +38,12 @@ exclude = [
     "manage.py",
     "pyfolio/settings",
     "emr/migrations",
+    "base_site/migrations",
+]
+
+[tool.ruff.lint]
+ignore = [
+    "RUF012", # Django model configuration
 ]
 
 [tool.coverage.run]
