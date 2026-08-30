@@ -95,7 +95,7 @@ class PatientDelete(LoginRequiredMixin, DeleteView):
             request,
             self.success_message % {"patient_full_name": patient.full_name()},
         )
-        return super().delete(self, request, *args, **kwargs)
+        return super().delete(request, *args, **kwargs)
 
 
 class MedicalRecordCreate(LoginRequiredMixin, View):
