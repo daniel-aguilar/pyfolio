@@ -258,6 +258,7 @@ dependencies = [
     { name = "gunicorn" },
     { name = "pillow" },
     { name = "psycopg", extra = ["binary"] },
+    { name = "python-dateutil" },
     { name = "python-dotenv" },
     { name = "whitenoise" },
 ]
@@ -284,6 +285,7 @@ requires-dist = [
     { name = "model-bakery", marker = "extra == 'dev'", specifier = ">=1" },
     { name = "pillow", specifier = "~=12.3" },
     { name = "psycopg", extras = ["binary"], specifier = "~=3.3" },
+    { name = "python-dateutil", specifier = "~=2.9" },
     { name = "python-dotenv", specifier = "~=1.2" },
     { name = "ruff", marker = "extra == 'dev'", specifier = "~=0.16.5" },
     { name = "whitenoise", specifier = "~=6.12" },

@@ -13,6 +13,7 @@ dependencies = [
     "django-s3-storage~=0.15",
     "pillow~=12.3",
     "psycopg[binary]~=3.3",
+    "python-dateutil~=2.9",
     "python-dotenv~=1.2",
     "gunicorn~=26.0",
     "whitenoise~=6.12",
