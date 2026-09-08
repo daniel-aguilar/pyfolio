@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-07 22:09+0000\n"
+"POT-Creation-Date: 2026-09-08 22:42+0000\n"
 "PO-Revision-Date: 2026-03-07 16:20-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -193,7 +193,7 @@ msgstr "Este paciente aún no tiene un expediente médico."
 msgid "Are you sure you want to remove \"%(object)s\"?"
 msgstr "¿Está seguro(a) que desea eliminar a \"%(object)s\"?"
 
-#: emr/templates/emr/patients/confirm_delete.html:9 emr/views.py:44
+#: emr/templates/emr/patients/confirm_delete.html:9 emr/views.py:43
 msgid "Remove"
 msgstr "Eliminar"
 
@@ -211,7 +211,7 @@ msgid "Personal Information"
 msgstr "Información Personal"
 
 #: emr/templates/emr/patients/personal_information_snippet.html:15
-#: emr/templates/emr/patients/update_form.html:13 emr/views.py:43
+#: emr/templates/emr/patients/update_form.html:13 emr/views.py:42
 msgid "Update Personal Information"
 msgstr "Actualizar Información Personal"
 
@@ -223,21 +223,21 @@ msgstr "Eliminar Paciente"
 msgid "Age"
 msgstr "Edad"
 
-#: emr/views.py:42
+#: emr/views.py:41
 msgctxt "verb"
 msgid "View"
 msgstr "Ver"
 
-#: emr/views.py:68
+#: emr/views.py:67
 #, python-format
 msgid "Patient %(patient_full_name)s added"
 msgstr "Paciente %(patient_full_name)s ingresado"
 
-#: emr/views.py:79
+#: emr/views.py:78
 msgid "Personal information updated"
 msgstr "Información personal actualizada"
 
-#: emr/views.py:90
+#: emr/views.py:89
 #, python-format
 msgid "Patient %(patient_full_name)s removed"
 msgstr "Paciente %(patient_full_name)s removido(a)"
